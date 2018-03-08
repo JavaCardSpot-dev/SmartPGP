@@ -2,6 +2,7 @@
 Masaryk University](https://is.muni.cz/auth/predmety/predmet?lang=en;setlang=en;pvysl=3141746). All
 meaningful improvements will be attempted to be pushed to upstream repository in June 2018.**
 
+
  [![Build status](https://travisci.org/JavaCardSpot-dev/SmartPGP.svg?branch=master)](https://travisci.org/JavaCardSpot-dev/SmartPGP)
  
 # SmartPGP applet
