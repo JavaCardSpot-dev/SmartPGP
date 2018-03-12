@@ -1,291 +1,170 @@
-:information_source: **IMPORTANT: This repository is used for class [PV204 Security Technologies at
-Masaryk University](https://is.muni.cz/auth/predmety/predmet?lang=en;setlang=en;pvysl=3141746). All
-meaningful improvements will be attempted to be pushed to upstream repository in June 2018.**
+# JavaCard Template project with Gradle
 
+[![Build Status](https://travis-ci.org/crocs-muni/javacard-gradle-template-edu.svg?branch=master)](https://travis-ci.org/crocs-muni/javacard-gradle-template-edu)
 
- [![Build status](https://travisci.org/JavaCardSpot-dev/SmartPGP.svg?branch=master)](https://travisci.org/JavaCardSpot-dev/SmartPGP)
- 
-# SmartPGP applet
+This is simple JavaCard project template using Gradle build system.
 
-SmartPGP is a free and open source implementation of the [OpenPGP card
-3.3 specification](https://gnupg.org/ftp/specs/OpenPGP-smart-card-application-3.3.pdf) in JavaCard.
+You can develop your JavaCard applets and build cap files with the Gradle!
+Moreover the project template enables you to test the applet with [JCardSim] or on the physical cards.
 
-The main improvement introduced in OpenPGP card 3.x specification from
-previous version is the support of elliptic curve cryptography with
-several existing curves (NIST P-256, NIST P-384, NIST P-521, brainpool
-p256r1, brainpool p384r1 and brainpool p512r1).
+Gradle project contains one module:
 
+- `applet`: contains the javacard applet. Can be used both for testing and building CAP
 
-## Features
+Features:
+ - Gradle build (CLI / IntelliJ Idea)
+ - Build CAP for applets
+ - Test applet code in [JCardSim] / physical cards
+ - IntelliJ Idea: Coverage
+ - Travis support 
 
-The following features are implemented at the applet level, but some
-of them depend on underlying hardware support and available
-(non-)volatile memory resources:
+### Template
 
-- RSA (>= 2048 bits modulus, 17 bits exponent) and ECC (NIST P-256,
-  NIST P-384, NIST P-521, brainpool p256r1, brainpool p384r1 and
-  brainpool p512r1) for signature, encryption and authentication;
+The template contains simple Hello World applet generating random bytes on any APDU message received.
+There is also implemented very simple test that sends static APDU command to this applet - in JCardSim.
 
-- On-board key generation and external private key import;
+The Gradle project can be opened and run in the IntelliJ Idea.
 
-- PIN codes (user, admin and resetting code) up to 127 characters;
+Running in IntelliJ Idea gives you a nice benefit: *Coverage*!
 
-- Certificate up to 1 kB (DER encoded) for each key;
+## How to use
 
-- Login, URL, and private DOs up to 256 bytes;
+- Clone this template repository:
 
-- Command and response chaining;
+```
+git clone --recursive https://github.com/crocs-muni/javacard-gradle-template-edu.git
+```
 
-- AES 128/256 bits deciphering primitive;
+- Implement your applet in the `applet` module.
 
-- Secure messaging (see below).
+- Run Gradle wrapper `./gradlew` on Unix-like system or `./gradlew.bat` on Windows
+to build the project for the first time (Gradle will be downloaded if not installed).
 
+## Building cap
 
-## Default values
+- Setup your Applet ID (`AID`) in the `./applet/build.gradle`.
 
-The SmartPGP applet is configured with the following default values:
+- Run the `buildJavaCard` task:
 
-- Admin PIN is 12345678;
+```
+./gradlew buildJavaCard  --info --rerun-tasks
+```
 
-- User PIN is 123456;
+Generates a new cap file `./applet/out/cap/applet.cap`
 
-- No PUK (a.k.a. resetting code) is defined;
+Note: `--rerun-tasks` is to force re-run the task even though the cached input/output seems to be up to date.
 
-- RSA 2048 bits for PGP keys;
+Typical output:
 
-- NIST P-256 for the secure messaging key.
+```
+[ant:cap] [ INFO: ] Converter [v3.0.5]
+[ant:cap] [ INFO: ]     Copyright (c) 1998, 2015, Oracle and/or its affiliates. All rights reserved.
+[ant:cap]     
+[ant:cap]     
+[ant:cap] [ INFO: ] conversion completed with 0 errors and 0 warnings.
+[ant:verify] XII 10, 2017 10:45:05 ODP.  
+[ant:verify] INFO: Verifier [v3.0.5]
+[ant:verify] XII 10, 2017 10:45:05 ODP.  
+[ant:verify] INFO:     Copyright (c) 1998, 2015, Oracle and/or its affiliates. All rights reserved.
+[ant:verify]     
+[ant:verify]     
+[ant:verify] XII 10, 2017 10:45:05 ODP.  
+[ant:verify] INFO: Verifying CAP file /Users/dusanklinec/workspace/jcard/applet/out/cap/applet.cap
+[ant:verify] javacard/framework/Applet
+[ant:verify] XII 10, 2017 10:45:05 ODP.  
+[ant:verify] INFO: Verification completed with 0 warnings and 0 errors.
+```
 
-These values can be changed by modifying default values in the code
-(see the [Constants](src/fr/anssi/smartpgp/Constants.java)
-class).
+## Running tests
 
-When the applet is installed, one can use the `smartpgp-cli` utility
-given in the `bin` directory to change these values. Keep in mind that
-when you change the algorithm attributes of a PGP key or of the secure
-messaging key, the key and the corresponding certificate are
-erased. Also note that hard coded default values will be restored upon
-a factory reset.
+```
+./gradlew test --info --rerun-tasks
+```
 
+Output:
 
-## Compliance with OpenPGP card 3.3 specification
+```
+Running test: Test method hello(AppletTest)
 
-The SmartPGP applet implements the complete OpenPGP card 3.3
-specification, except the secure messaging related features:
+Gradle suite > Gradle test > AppletTest.hello STANDARD_OUT
+    Connecting to card... Done.
+    --> [00C00000080000000000000000] 13
+    <-- 51373E8B6FDEC284DB569204CA13D2CAA23BD1D85DCAB02A0E3D50461E73F1BB 9000 (32)
+    ResponseAPDU: 34 bytes, SW=9000
+```
 
-- Commands and responses protection is not implemented as described in
-  the specification. Motivation and implementation details are
-  explained in the
-  [secure messaging document](secure_messaging/smartpgp_sm.pdf);
+## Dependencies
 
-- A command protected by secure messaging is not granted admin
-  rights. Secure messaging can thus be used to protect communications
-  only, especially when the token is used contactless;
+This project uses mainly:
 
-- If and only if secure messaging static key and certificate have been
-  provisioned, all commands containing sensitive data (e.g. PIN code,
-  decrypted data, private key, ...) emitted through a contactless
-  interface must be protected by secure messaging or they will be
-  refused;
+- https://github.com/bertrandmartel/javacard-gradle-plugin
+- https://github.com/martinpaljak/ant-javacard
+- https://github.com/martinpaljak/oracle_javacard_sdks
+- https://github.com/licel/jcardsim
+- Petr Svenda scripts 
 
-- The `ACTIVATE FILE` with P1 = P2 = 0, as described in the
-  specification, resets everything except the secure messaging static
-  key and certificate. Complete reset, including these elements, can
-  be performed with `ACTIVATE FILE` with P1 = 0 and P2 = 1.
+Big kudos for a great work!
 
+### JavaCard support
 
+Thanks to Martin Paljak's [ant-javacard] and [oracle_javacard_sdks] we support:
 
-# Application support
+- JavaCard 2.1.2
+- JavaCard 2.2.1
+- JavaCard 2.2.2
+- JavaCard 3.0.3
+- JavaCard 3.0.4
+- JavaCard 3.0.5u1
 
-Tokens following the OpenPGP card 3.3 specification are not yet fully
-supported by most PGP applications.
+## Coverage
 
-## GnuPG
+This is a nice benefit of the IntelliJ Idea - gives you coverage 
+results out of the box. 
 
-OpenPGP card 3.x is supported by [GnuPG](https://www.gnupg.org/)
-starting from version 2.1.16.
+You can see the test coverage on your applet code.
 
-The specific secure messaging of the SmartPGP applet is
-**not** supported at all at is not part of the OpenPGP card
-specification.
+- Go to Gradle plugin in IntelliJ Idea
+- Tasks -> verification -> test
+- Right click - run with coverage.
 
-## OpenKeychain
+Coverage summary:
+![coverage summary](https://raw.githubusercontent.com/ph4r05/javacard-gradle-template/master/.github/image/coverage_summary.png)
 
-OpenPGP card 3.x is supported by [OpenKeychain](https://www.openkeychain.org/)
-starting from version 4.2. Only NIST curves are supported.
+Coverage code:
+![coverage code](https://raw.githubusercontent.com/ph4r05/javacard-gradle-template/master/.github/image/coverage_class.png)
 
-The secure messaging of the SmartPGP applet is fully supported in
-OpenKeychain. See the section below for more information on the setup process.
+## Troubleshooting
 
+If you experience the following error: 
 
-# Content of the repository
+```
+java.lang.VerifyError: Expecting a stackmap frame at branch target 19
+    Exception Details:
+      Location:
+        javacard/framework/APDU.<init>(Z)V @11: ifeq
+      Reason:
+        Expected stackmap frame at this location.
+```
 
-The repository contains several directories:
+Then try running JVM with `-noverify` option.
 
-- `bin` contains a Python library and command line tool called
-  `smartpgp-cli` to interact with an OpenPGP card 3.x but also to deal
-  with the specific secure messaging feature of the SmartPGP applet;
-  
-- `secure_messaging` contains documentation and example scripts to
-  play with the secure messaging feature of SmartPGP;
-  
-- `src` contains the JavaCard source code of the SmartPGP applet;
+In the IntelliJ Idea this can be configured in the top tool bar
+with run configurations combo box -> click -> Edit Configurations -> VM Options.
 
-- `videos` contains sample videos demonstrating smartcard interactions
-  with OpenKeychain and K9 mail on Android Nexus 5.
+## Roadmap
 
+TODOs for this project:
 
+- Polish Gradle build scripts
+- Add basic libraries as maven dependency.
 
-# Build and installation instructions
+## Contributions
 
+Community feedback is highly appreciated - pull requests are welcome!
 
-## Prerequisites
-- JavaCard Development Kit 3.0.4 (or above) from
-  [Oracle website](http://www.oracle.com/technetwork/java/embedded/javacard/downloads/index.html);
 
-- The `ant` tool 1.9.4 (or above) from your Linux distribution or from
-  [Apache Ant project website](http://ant.apache.org/);
-  
-- A device compliant with JavaCard 3.0.4 (or above) with enough
-  available resources to hold the code (approximately 23 kB of
-  non-volatile memory), persistent data (approximately 10 kB of
-  non-volatile memory) and volatile data (approximately 2 kB of RAM).
 
-## Reducing flash and/or RAM consumption
-
-The applet allocates all its data structures to their maximal size
-at installation to avoid as much as possible runtime errors caused by
-memory allocation failure. If your device does not have enough flash
-and/or RAM available, or if you plan not to use some features
-(e.g. stored certificates), you can adjust the applet to reduce its
-resource consumption by tweaking the following variables:
-
-- `Constants.INTERNAL_BUFFER_MAX_LENGTH`: the size in bytes of the
-  internal RAM buffer used for input/output chaining. Chaining is
-  especially used in case of long commands and responses such as those
-  involved in private key import and certificate import/export.
-  
-- `Constants.EXTENDED_CAPABILITIES`, bytes 5 and 6: the maximal size
-  in bytes of a certificate associated to a key. Following the OpenPGP
-  card specification, a certificate can be stored for each of the
-  three keys. In SmartPGP, a fourth certificate is stored for secure
-  messaging.
-
-
-## Building the CAP file
-- Copy the `javacard.properties.example` file to a file named
-  `javacard.properties`;
-
-- Edit the `javacard.properties` file and set the path of your
-  JavaCard Development Kit;
-
-- (Optional) Edit the `build.xml` file and replace the `0xAF:0xAF`
-  bytes in the `APPLET_AID` with your own manufacturer identifier (see
-  section 4.2.1 of OpenPGP card specification);
-
-- Execute `ant` with no parameter will produce the CAP file in
-  `build/fr/anssi/smartpgp/javacard/smartpgp.cap`.
-
-
-## Installing the CAP file
-
-The CAP file installation depends on your device, so you have to refer
-to the instructions given by your device manufacturer. Most open cards
-relying on Global Platform with default keys are supported by
-[GlobalPlatformPro](https://github.com/martinpaljak/GlobalPlatformPro).
-
-Be careful to use a valid AID according to the OpenPGP card
-specification (see section 4.2.1) for each card.
-
-
-
-# Setting up secure messaging with OpenKeychain
-
-The patch written for OpenKeychain permits to use the secure
-messaging feature with or without token authentication.
-
-## Secure messaging without token authentication
-
-Without token authentication, you are not protected against man-in-the
-middle attack as your device cannot ensure it is communicating
-directly with a trusted token. Nevertheless, the communications with
-the token are still protected in confidentiality against passive
-attacks (i.e. traffic capture).
-
-If you want to test secure messaging without token authentication, you
-can use the following command to order the token to generate its
-secure messaging key on-board.
-
-`./smartpgp-cli -r X -I generate-sm-key -o pubkey.raw`
-
-In this case, you have to deactivate the certificate verification in
-OpenKeychain: go to "Parameters" > "Experimental features" and
-deactivate the option called "SmartPGP verify certificate".
-
-
-## Secure messaging with token authentication
-
-The `secure_messaging` directory contains a subdirectory called `pki`
-which contains two sample scripts to generate a certificate
-authority and token certificates.
-
-The sample scripts are given **only** for test purposes of the secure
-messaging feature with certificate verification. They require
-`openssl` to be installed on your system.
-
-If you want to use your own PKI, you have to generate a specific
-intermediate certificate authority to sign the certificates of your
-token(s). Then, you have to provision the complete certificate chain
-from this new intermediate CA to your root CA in OpenKeychain because
-the certificate verification implemented in the given patch does not
-rely on the system keystore.
-
-### Generate a sample CA key and certificate
-
-Change your current directory to the `pki` directory and execute the
-script `./generate_ca.sh`. It will produce a sample CA key in
-`PKI/private/ca.key.pem` and the corresponding certificate in
-`PKI/certs/ca.cert.pem`.
-
-### Generate a sample token key and certificate
-
-Change your current directory to the `pki` directory and execute the
-script
-
-`./generate_token.sh mycard1`
-
-where `mycard1` is some unique identifier for the token. It will
-produce a sample token key in `PKI/private/mycard1.key.pem` and the
-corresponding certificate in `PKI/certs/mycard1.cert.pem`.
-
-### Provision the token with its sample key and certificate
-
-Change your current directory to the `bin` directory and execute the
-following commands after replacing the reader number `X` by the number
-of the reader that contains your token, and the path to the `pki`
-directory used in previous sections.
-
-The following command imports the token key in the token.
-
-`./smartpgp-cli -r X -I -i path_to_the_pki_dir/PKI/private/mycard1.key.der put-sm-key`
-
-The following command imports the token certificate in the token.
-
-`./smartpgp-cli -r X -I -i path_to_the_pki_dir/PKI/certs/mycard1.cert.der put-sm-certificate`
-
-These commands have to be executed in this order because the key
-import clears any previously stored certificate.
-
-Once the token key is imported, you should remove the token private
-key from you system as there is no need to keep it outside of your
-token.
-
-### Install the CA in OpenKeychain
-
-- Upload the CA certificate `PKI/certs/ca.cert.pem` to your phone;
-
-- Go to "Parameters" > "Experimental features" and activate the option called "SmartPGP verify certificate`;
-
-- Click on "SmartPGP trusted authorities", and then on "+" at the top left;
-
-- Set a name for this authority and select the file you uploaded.
+[JCardSim]: https://jcardsim.org/
+[ant-javacard]: https://github.com/martinpaljak/ant-javacard
+[oracle_javacard_sdks]: https://github.com/martinpaljak/oracle_javacard_sdks
 
