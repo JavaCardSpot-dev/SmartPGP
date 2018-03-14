@@ -2,7 +2,7 @@
 
 :information_source: **IMPORTANT: This repository is used for class [PV204 Security Technologies at Masaryk University](https://is.muni.cz/auth/predmety/predmet?lang=en;setlang=en;pvysl=3141746). All meaningful improvements will be attempted to be pushed to upstream repository in June 2018.**
 
-[![Build status](https://travis- ci.org/JavaCardSpot-dev/SmartPGP.svg?branch=master)](https://travis- ci.org/JavaCardSpot-dev/SmartPGP)
+Travis CI:  [![Build status](https://travis- ci.org/JavaCardSpot-dev/SmartPGP.svg?branch=master)](https://travis-ci.org/JavaCardSpot-dev/SmartPGP)
 
 SmartPGP is a free and open source implementation of the [OpenPGP card
 3.3 specification](https://gnupg.org/ftp/specs/OpenPGP-smart-card-application-3.3.pdf) in JavaCard.
