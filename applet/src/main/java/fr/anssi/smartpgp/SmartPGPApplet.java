@@ -308,7 +308,7 @@ public final class SmartPGPApplet extends Applet {
 
         case Constants.TAG_HISTORICAL_BYTES_CARD_SERVICE_CARD_CAPABILITIES:
             off = Util.arrayCopyNonAtomic(Constants.HISTORICAL_BYTES, (short)0,
-                                          buf, (short)off,
+                                          buf, off,
                                           (byte)Constants.HISTORICAL_BYTES.length);
             break;
 
@@ -1125,17 +1125,17 @@ public final class SmartPGPApplet extends Applet {
 
             case Constants.TAG_GENERATION_DATE_SIG:
                 assertAdmin();
-                data.pgp_keys[Persistent.PGP_KEYS_OFFSET_SIG].setGenerationDate(buf, (short)0, (short)lc);
+                data.pgp_keys[Persistent.PGP_KEYS_OFFSET_SIG].setGenerationDate(buf, (short)0, lc);
                 break;
 
             case Constants.TAG_GENERATION_DATE_DEC:
                 assertAdmin();
-                data.pgp_keys[Persistent.PGP_KEYS_OFFSET_DEC].setGenerationDate(buf, (short)0, (short)lc);
+                data.pgp_keys[Persistent.PGP_KEYS_OFFSET_DEC].setGenerationDate(buf, (short)0, lc);
                 break;
 
             case Constants.TAG_GENERATION_DATE_AUT:
                 assertAdmin();
-                data.pgp_keys[Persistent.PGP_KEYS_OFFSET_AUT].setGenerationDate(buf, (short)0, (short)lc);
+                data.pgp_keys[Persistent.PGP_KEYS_OFFSET_AUT].setGenerationDate(buf, (short)0, lc);
                 break;
 
             case Constants.TAG_RESETTING_CODE:
@@ -1403,7 +1403,7 @@ public final class SmartPGPApplet extends Applet {
 
         data.isTerminated = true;
     }
-
+    @SuppressWarnings("fallthrough")
     private final void processActivateFile(final byte p1, final byte p2) {
         if(p1 != (byte)0) {
             ISOException.throwIt(ISO7816.SW_WRONG_P1P2);
