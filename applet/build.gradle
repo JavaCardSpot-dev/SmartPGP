@@ -53,6 +53,8 @@ final def JC305 = libsSdk + '/jc305u1_kit'
 // Which JavaCard SDK to use - select
 final def JC_SELECTED = JC304
 
+ant.importBuild 'build.xml'
+
 javacard {
 
     //noinspection GroovyAssignabilityCheck

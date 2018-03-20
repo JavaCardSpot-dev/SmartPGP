@@ -20,7 +20,7 @@
       </classpath>
     </javac>
   </target>
-  <target depends="compile" name="convert" description="convert to .cap">
+  <target depends="compile" name="convertToCap" description="convert to .cap">
       <java classname="com.sun.javacard.converter.Main" fork="true" failonerror="true">
       <arg line="-classdir ${build}"/>
       <arg line="-verbose"/>
@@ -33,7 +33,7 @@
       </classpath>
     </java>
   </target>
-  <target name="clean" description="clean up">
+  <target name="clean_javacard" description="clean up">
     <delete dir="${build}"/>
   </target>
 </project>
