@@ -88,6 +88,8 @@ public final class PGPKey {
     protected final void reset(final boolean isRegistering) {
         resetKeys(isRegistering);
 
+        // Begins an atomic transaction. If a transaction is already in progress (transaction nesting depth level != 0), a TransactionException is thrown.
+        // This wrapping method begins the transacion only when applet is not registering
         Common.beginTransaction(isRegistering);
         if(attributes_length > 0) {
             Util.arrayFillNonAtomic(attributes, (short)0, attributes_length, (byte)0);
@@ -105,6 +107,8 @@ public final class PGPKey {
                                     (short)Constants.ALGORITHM_ATTRIBUTES_DEFAULT.length);
             attributes_length = (byte)Constants.ALGORITHM_ATTRIBUTES_DEFAULT.length;
         }
+        // Commits an atomic transaction. The contents of commit buffer is atomically committed. If a transaction is not in progress (transaction nesting depth level == 0) then a TransactionException is thrown.
+        // This wrapping method begins the transacion only when applet is not registering
         Common.commitTransaction(isRegistering);
     }
 
