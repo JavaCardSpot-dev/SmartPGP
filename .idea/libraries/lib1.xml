@@ -1,0 +1,20 @@
+<component name="libraryTable">
+  <library name="lib1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs-sdks/jc221_kit/lib/jcrmiclientframework.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs-sdks/jc221_kit/lib/converter.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs-sdks/jc221_kit/lib/offcardverifier.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs-sdks/jc221_kit/lib/installer.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs-sdks/jc221_kit/lib/capdump.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs-sdks/jc221_kit/lib/jcwde.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs-sdks/jc221_kit/lib/jcclientsamples.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs-sdks/jc221_kit/lib/api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs-sdks/jc221_kit/lib/apdutool.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs-sdks/jc221_kit/lib/javacardframework.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs-sdks/jc221_kit/lib/scriptgen.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs-sdks/jc221_kit/lib/apduio.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

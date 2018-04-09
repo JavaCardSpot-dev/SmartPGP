@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="uninstaller">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs-sdks/jc303_kit/Uninstaller/uninstaller.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

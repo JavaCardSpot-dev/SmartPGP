@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="gp211">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/globalplatform-2_1_1/gp211.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

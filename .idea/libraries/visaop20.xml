@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="visaop20">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/visa_openplatform-2_0/visaop20.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
