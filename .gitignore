@@ -1,5 +1,4 @@
 .gradle
-*.iml
 applet/out
 applet/build
 simulator/build
