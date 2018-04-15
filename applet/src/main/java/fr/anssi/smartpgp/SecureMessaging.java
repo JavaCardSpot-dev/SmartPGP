@@ -346,7 +346,7 @@ public final class SecureMessaging {
 
 
         // MAC is at the end of message
-        // Compute MAC for message (take previous MAC as frist block) and compare if its equal
+        // Compute MAC for message (take previous MAC as first block) and compare if its equal
         macer.init(smac);
         macer.update(mac_chaining, (short)0, Constants.AES_BLOCK_SIZE);
         macer.update(buf, dataLen, (short)(dataWithHeaderLen - dataLen));

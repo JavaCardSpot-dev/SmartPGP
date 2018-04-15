@@ -6,7 +6,6 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/applet/applet_main.iml" filepath="$PROJECT_DIR$/.idea/modules/applet/applet_main.iml" group="applet" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/applet/applet_test.iml" filepath="$PROJECT_DIR$/.idea/modules/applet/applet_test.iml" group="applet" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/jcard.iml" filepath="$PROJECT_DIR$/.idea/modules/jcard.iml" />
-      <module fileurl="file://$PROJECT_DIR$/applet/src/main/main.iml" filepath="$PROJECT_DIR$/applet/src/main/main.iml" />
     </modules>
   </component>
 </project>

@@ -70,6 +70,7 @@ public final class SmartPGPApplet extends Applet {
     private final void prepareChainingInput(final byte[] apdubuf) {
         short tmp;
 
+        // Erase output - we are recieving input so we already sent output
         tmp = transients.outputLength();
         if(tmp > 0) {
             Util.arrayFillNonAtomic(transients.buffer, transients.outputStart(), tmp, (byte)0);
@@ -78,6 +79,7 @@ public final class SmartPGPApplet extends Applet {
         transients.setOutputStart((short)0);
         transients.setOutputLength((short)0);
 
+        // If a command is part of the chain it has to have the same instruction, p1 and p2 bytes set to same values as previous commands in chain
         if(transients.chainingInput()) {
             if((apdubuf[ISO7816.OFFSET_INS] != transients.chainingInputIns()) ||
                (apdubuf[ISO7816.OFFSET_P1] != transients.chainingInputP1()) ||
@@ -87,16 +89,20 @@ public final class SmartPGPApplet extends Applet {
                 ISOException.throwIt(Constants.SW_CHAINING_ERROR);
                 return;
             }
+            // If there is no mask set this is the last part of command chain
             if((apdubuf[ISO7816.OFFSET_CLA] & Constants.CLA_MASK_CHAINING) != Constants.CLA_MASK_CHAINING) {
                 transients.setChainingInput(false);
             }
+            // If chaining input is not set this is the first command (it can be single command or the first part of chain)
         } else {
+            // erase previous command from memory
             tmp = transients.chainingInputLength();
             if(tmp > 0) {
                 Util.arrayFillNonAtomic(transients.buffer, (short)0, tmp, (byte)0);
             }
             transients.setChainingInputLength((short)0);
 
+            // If this command is first command of command chain remember header values
             if((apdubuf[ISO7816.OFFSET_CLA] & Constants.CLA_MASK_CHAINING) == Constants.CLA_MASK_CHAINING) {
                 transients.setChainingInputIns(apdubuf[ISO7816.OFFSET_INS]);
                 transients.setChainingInputP1(apdubuf[ISO7816.OFFSET_P1]);
@@ -123,6 +129,7 @@ public final class SmartPGPApplet extends Applet {
             return;
         }
 
+        // Append recieved bytes to buffer
         while(blen > 0) {
             off = Util.arrayCopyNonAtomic(apdubuf, offcdata,
                                           transients.buffer, off,
@@ -1475,9 +1482,11 @@ public final class SmartPGPApplet extends Applet {
         short available_le = 0;
         short sw = (short)0x9000;
 
+        // If ins is get response the PC app is getting another data from output chain
         if(((apdubuf[ISO7816.OFFSET_CLA] & Constants.CLA_MASK_CHAINING) != Constants.CLA_MASK_CHAINING) &&
            (apdubuf[ISO7816.OFFSET_INS] == Constants.INS_GET_RESPONSE)) {
 
+            // If we are currently chaining input or not chaining output throw exception
             if(transients.chainingInput() || !transients.chainingOutput()) {
                 ISOException.throwIt(Constants.SW_CHAINING_ERROR);
                 return;
@@ -1489,12 +1498,14 @@ public final class SmartPGPApplet extends Applet {
             }
 
             available_le = transients.outputLength();
-
+            // If this is not the last command (the chaining mas is set) call functions that will handle it
+            // If there are no errors the input is appended to previous commands in buffer
         } else if((apdubuf[ISO7816.OFFSET_CLA] & Constants.CLA_MASK_CHAINING) == Constants.CLA_MASK_CHAINING) {
 
             prepareChainingInput(apdubuf);
             receiveData(apdu);
 
+            // If command is not part of command chain or it is the last command call fucntion depenting on instruction
         } else {
 
             prepareChainingInput(apdubuf);
@@ -1502,6 +1513,7 @@ public final class SmartPGPApplet extends Applet {
 
             short lc = transients.chainingInputLength();
 
+            // If we use secude messaging decrypt command in buffer
             if((apdubuf[ISO7816.OFFSET_CLA] & Constants.CLA_MASK_SECURE_MESSAGING) == Constants.CLA_MASK_SECURE_MESSAGING) {
                 short off = lc;
 
@@ -1600,6 +1612,7 @@ public final class SmartPGPApplet extends Applet {
 
             if(transients.secureMessagingOk()) {
 
+                // Padd message
                 if(available_le > 0) {
                     short tmp = (short)(Constants.AES_BLOCK_SIZE - (available_le % Constants.AES_BLOCK_SIZE));
                     available_le = Util.arrayCopyNonAtomic(SecureMessaging.PADDING_BLOCK, (short)0,
@@ -1607,6 +1620,7 @@ public final class SmartPGPApplet extends Applet {
                                                            tmp);
                 }
 
+                // Encrypt message
                 if((available_le != 0) ||
                    (sw == (short)0x9000) ||
                    ((short)(sw & (short)0x6200) == (short)0x6200) ||
@@ -1619,7 +1633,7 @@ public final class SmartPGPApplet extends Applet {
         }
 
 
-
+        // If we have something to send send it
         if(available_le > 0) {
 
             short resp_le = available_le;
@@ -1631,23 +1645,27 @@ public final class SmartPGPApplet extends Applet {
                 }
             }
 
+            // If prepared output is longer than max length send just part of it
             if(resp_le > Constants.APDU_MAX_LENGTH) {
                 resp_le = Constants.APDU_MAX_LENGTH;
             }
 
             short off = transients.outputStart();
 
+            // Copy bytes from transient memory to apdu buffer
             Util.arrayCopyNonAtomic(transients.buffer, off,
                                     apdubuf, (short)0, resp_le);
 
             apdu.setOutgoingLength(resp_le);
             apdu.sendBytes((short)0, resp_le);
 
+            // Erase sent bytes from memory
             Util.arrayFillNonAtomic(transients.buffer, off, resp_le, (byte)0);
 
             available_le -= resp_le;
             off += resp_le;
 
+            // If we did not sent whole available outout prepare for output chaining
             if(available_le > 0) {
                 transients.setChainingOutput(true);
                 transients.setOutputLength(available_le);
