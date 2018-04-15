@@ -143,6 +143,7 @@ public final class SecureMessaging {
     }
 
 
+    // Takes buffer sent to card that contains public key for key agreement, computes shared secret and sends back the card's public part
     private final short scp11b(final ECCurves curves,
                                final byte[] buf, final short len) {
 
@@ -174,6 +175,7 @@ public final class SecureMessaging {
         }
         off += 2;
 
+        // Get length of secret sent to card
         short keylen = Common.readLength(buf, off, len);
 
         off = Common.skipLength(buf, off, len);
@@ -188,6 +190,7 @@ public final class SecureMessaging {
             return 0;
         }
 
+        // Create private and public key for DH with ECC
         ECPrivateKey eskcard = (ECPrivateKey)KeyBuilder.buildKey(KeyBuilder.TYPE_EC_FP_PRIVATE,
                                                                  params.nb_bits,
                                                                  false);
@@ -195,11 +198,13 @@ public final class SecureMessaging {
                                                                params.nb_bits,
                                                                false);
 
+        // Set parameters for curves
         params.setParams(eskcard);
         params.setParams(epkcard);
 
         KeyPair ekcard = new KeyPair(epkcard, eskcard);
 
+        // Generate keys
         ekcard.genKeyPair();
 
         if(!eskcard.isInitialized() ||
@@ -212,10 +217,13 @@ public final class SecureMessaging {
 
         short msglen = 0;
 
+        // Generate secret combining public key sent to card and private key on card and append it to buffer
         msglen += key_agreement.generateSecret(buf, off, keylen, buf, len);
+        // Clear private key on card
         eskcard.clearKey();
         eskcard = null;
 
+        // Generate secret combining public key sent to card and static key on card and append it to buffer
         static_key.initKeyAgreement(key_agreement);
         msglen += key_agreement.generateSecret(buf, off, keylen, buf, (short)(len + msglen));
 
@@ -243,17 +251,21 @@ public final class SecureMessaging {
                                      buf, (short)(len + msglen + keylen));
         }
 
+        // Initialize MAC keys
         initSession(Common.aesKeyLength(params), buf, (short)(len + msglen));
 
+        // Erase MAC keys from buffer
         Util.arrayFillNonAtomic(buf, len, (short)(msglen + keylen), (byte)0);
 
         off = len;
         Util.setShort(buf, off, (short)0x5F49);
         off += 2;
         off = Common.writeLength(buf, off, (short)(2 * Common.bitsToBytes(params.nb_bits) + 1));
+        // Write public key to buffer (to send it back to PC)
         off += epkcard.getW(buf, off);
         msglen = off;
 
+        // Clear public key
         epkcard.clearKey();
         epkcard = null;
 
@@ -262,17 +274,20 @@ public final class SecureMessaging {
         buf[off++] = (byte)0x86;
         buf[off++] = (byte)Constants.AES_BLOCK_SIZE;
 
+        // Compute MAC of message
         macer.init(sreceiptmac);
         macer.sign(buf, (short)0, msglen,
                    buf, off, Constants.AES_BLOCK_SIZE);
         macer.clear();
 
+        // Copy current MAC into array for future computation of another MAC
         Util.arrayCopy(buf, off, mac_chaining, (short)0, Constants.AES_BLOCK_SIZE);
 
         off += Constants.AES_BLOCK_SIZE;
 
         msglen = (short)(off - len);
 
+        // Copy message at the beginning of buffer
         Util.arrayCopy(buf, len, buf, (short)0, msglen);
 
         return msglen;
@@ -320,6 +335,7 @@ public final class SecureMessaging {
 
         incrementEncryptionCounter(transients);
 
+        // Message should containg MAC therefore it has to be at least equal to0 MAC length
         if(dataLen < MAC_LENGTH) {
             clearSession(transients);
             ISOException.throwIt(ISO7816.SW_SECURITY_STATUS_NOT_SATISFIED);
@@ -328,6 +344,9 @@ public final class SecureMessaging {
 
         final byte[] buf = transients.buffer;
 
+
+        // MAC is at the end of message
+        // Compute MAC for message (take previous MAC as frist block) and compare if its equal
         macer.init(smac);
         macer.update(mac_chaining, (short)0, Constants.AES_BLOCK_SIZE);
         macer.update(buf, dataLen, (short)(dataWithHeaderLen - dataLen));
@@ -342,6 +361,7 @@ public final class SecureMessaging {
             return 0;
         }
 
+        // Copy current MAC into array for future computation of another MAC
         Util.arrayCopyNonAtomic(buf, dataLen,
                                 mac_chaining, (short)0,
                                 Constants.AES_BLOCK_SIZE);
@@ -349,29 +369,36 @@ public final class SecureMessaging {
         dataLen -= MAC_LENGTH;
 
         if(dataLen > 0) {
+            // Erase computed MAC and copy counter to memory
             Util.arrayFillNonAtomic(buf, dataLen, Constants.AES_BLOCK_SIZE, (byte)0);
             Util.setShort(buf, (short)(dataLen + Constants.AES_BLOCK_SIZE - 2),
                           transients.secureMessagingEncryptionCounter());
 
+            // Encrypt counter to use it as IV
             cipher.init(senc, Cipher.MODE_ENCRYPT);
             cipher.doFinal(buf, dataLen, Constants.AES_BLOCK_SIZE,
                            iv, (short)0);
 
+            // Init decription cipher with IV and key
             cipher.init(senc, Cipher.MODE_DECRYPT,
                         iv, (short)0, Constants.AES_BLOCK_SIZE);
 
-
+            // Compute offset for moved message - we move the message at the end of the buffer and decrypt it at beginning
             short tmp = (short)(Constants.INTERNAL_BUFFER_MAX_LENGTH - dataLen);
             if(tmp < Constants.AES_BLOCK_SIZE) {
                 ISOException.throwIt(Constants.SW_MEMORY_FAILURE);
                 return 0;
             }
 
+            // Copy message at computed offset
             Util.arrayCopyNonAtomic(buf, (short)0,
                                     buf, tmp,
                                     dataLen);
+
+            // Set data lenght to 0 - we will put decrypted data at the beginning of buffer
             dataLen = 0;
             while(tmp < Constants.INTERNAL_BUFFER_MAX_LENGTH) {
+                // If remaining data is shorter than block length do final else update
                 if((short)(Constants.INTERNAL_BUFFER_MAX_LENGTH - tmp) <= Constants.AES_BLOCK_SIZE) {
                     dataLen += cipher.doFinal(buf, tmp, (short)(Constants.INTERNAL_BUFFER_MAX_LENGTH - tmp),
                                               buf, dataLen);
@@ -383,6 +410,7 @@ public final class SecureMessaging {
                 }
             }
 
+            // Erase the IV
             Util.arrayFillNonAtomic(iv, (short)0, (short)iv.length, (byte)0);
 
             --dataLen;
@@ -414,30 +442,38 @@ public final class SecureMessaging {
         final byte[] buf = transients.buffer;
 
         if(dataLen > 0) {
+            // Fill one block right after data with zeroes and copy counter into it
             Util.arrayFillNonAtomic(buf, dataLen, Constants.AES_BLOCK_SIZE, (byte)0);
             buf[dataLen] = (byte)0x80;
             Util.setShort(buf, (short)(dataLen + Constants.AES_BLOCK_SIZE - 2),
                           transients.secureMessagingEncryptionCounter());
 
+            // Encrypt counter to use it as IV
             cipher.init(senc, Cipher.MODE_ENCRYPT);
 
             cipher.doFinal(buf, dataLen, Constants.AES_BLOCK_SIZE,
                            iv, (short)0);
 
+            // Init ecnryption cypher with IV and key
             cipher.init(senc, Cipher.MODE_ENCRYPT,
                         iv, (short)0, Constants.AES_BLOCK_SIZE);
 
+            // Copy
             short tmp = (short)(Constants.INTERNAL_BUFFER_MAX_LENGTH - dataLen);
             if(tmp < Constants.AES_BLOCK_SIZE) {
                 ISOException.throwIt(Constants.SW_MEMORY_FAILURE);
                 return 0;
             }
 
+            // Compute offset for moved message - we move the message at the end of the buffer and encrypt it at beginning
             Util.arrayCopyNonAtomic(buf, (short)0,
                                     buf, tmp,
                                     dataLen);
+
+            // Set data lenght to 0 - we will put decrypted data at the beginning of buffer
             dataLen = 0;
             while(tmp < Constants.INTERNAL_BUFFER_MAX_LENGTH) {
+                // If remaining data is shorter than block length do final else update
                 if((short)(Constants.INTERNAL_BUFFER_MAX_LENGTH - tmp) <= Constants.AES_BLOCK_SIZE) {
                     dataLen += cipher.doFinal(buf, tmp, (short)(Constants.INTERNAL_BUFFER_MAX_LENGTH - tmp),
                                               buf, dataLen);
@@ -452,6 +488,7 @@ public final class SecureMessaging {
             Util.arrayFillNonAtomic(iv, (short)0, (short)iv.length, (byte)0);
         }
 
+        // Compute MAC and place it after data
         macer.init(srmac);
 
         macer.update(mac_chaining, (short)0, Constants.AES_BLOCK_SIZE);
