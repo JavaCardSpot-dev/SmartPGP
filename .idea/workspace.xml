@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="83bd84b5-903b-4f71-9e5f-d6d0c1d5189c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/applet/applet.iml" afterPath="$PROJECT_DIR$/.idea/modules/applet/applet.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/jcard.iml" afterPath="$PROJECT_DIR$/.idea/modules/jcard.iml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/applet/src/main/java/fr/anssi/smartpgp/SecureMessaging.java" afterPath="$PROJECT_DIR$/applet/src/main/java/fr/anssi/smartpgp/SecureMessaging.java" />
       <change beforePath="$PROJECT_DIR$/applet/src/main/java/fr/anssi/smartpgp/SmartPGPApplet.java" afterPath="$PROJECT_DIR$/applet/src/main/java/fr/anssi/smartpgp/SmartPGPApplet.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -36,11 +32,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SmartPGPApplet.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SmartPGPApplet.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/applet/src/main/java/fr/anssi/smartpgp/SmartPGPApplet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="24636">
-              <caret line="1684" column="8" lean-forward="true" selection-start-line="1684" selection-start-column="8" selection-end-line="1684" selection-end-column="8" />
+            <state relative-caret-position="2041">
+              <caret line="1311" column="13" lean-forward="true" selection-start-line="1311" selection-start-column="13" selection-end-line="1311" selection-end-column="13" />
+              <folding>
+                <element signature="e#53876#53908#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SimpleAPDU.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/simpleapdu/SimpleAPDU.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="415">
+              <caret line="101" column="47" lean-forward="false" selection-start-line="101" selection-start-column="47" selection-end-line="101" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -49,30 +57,8 @@
       <file leaf-file-name="CmacKey.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/applet/src/main/java/fr/anssi/smartpgp/CmacKey.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-336">
+            <state relative-caret-position="108">
               <caret line="27" column="19" lean-forward="false" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SimpleAPDU.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/simpleapdu/SimpleAPDU.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CardManager.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/cardTools/CardManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -81,7 +67,7 @@
       <file leaf-file-name="CmacSignature.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/applet/src/main/java/fr/anssi/smartpgp/CmacSignature.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-516">
+            <state relative-caret-position="2556">
               <caret line="167" column="23" lean-forward="false" selection-start-line="167" selection-start-column="23" selection-end-line="167" selection-end-column="23" />
               <folding />
             </state>
@@ -91,7 +77,7 @@
       <file leaf-file-name="Common.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/applet/src/main/java/fr/anssi/smartpgp/Common.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-449">
+            <state relative-caret-position="1368">
               <caret line="97" column="33" lean-forward="false" selection-start-line="97" selection-start-column="33" selection-end-line="97" selection-end-column="33" />
               <folding />
             </state>
@@ -101,7 +87,7 @@
       <file leaf-file-name="SecureMessaging.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/applet/src/main/java/fr/anssi/smartpgp/SecureMessaging.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7462">
+            <state relative-caret-position="180">
               <caret line="31" column="34" lean-forward="false" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
               <folding />
             </state>
@@ -111,93 +97,11 @@
       <file leaf-file-name="Transients.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/applet/src/main/java/fr/anssi/smartpgp/Transients.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
+            <state relative-caret-position="415">
               <caret line="99" column="33" lean-forward="false" selection-start-line="99" selection-start-column="33" selection-end-line="99" selection-end-column="33" />
               <folding>
                 <element signature="e#4508#4509#0" expanded="true" />
                 <element signature="e#4564#4565#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SimulatorRuntime.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/libs/jacardsim-3.0.5/jcardsim-3.0.5-SNAPSHOT.jar!/com/licel/jcardsim/base/SimulatorRuntime.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-              <folding>
-                <marker date="1499448734000" expanded="false" signature="0:104" ph="/.../" />
-                <marker date="1499448734000" expanded="false" signature="147:974" ph="..." />
-                <marker date="1499448734000" expanded="true" signature="1832:1843" ph=" { " />
-                <marker date="1499448734000" expanded="true" signature="1871:1877" ph=" }" />
-                <marker date="1499448734000" expanded="true" signature="1940:3156" ph="{...}" />
-                <marker date="1499448734000" expanded="false" signature="3217:3228" ph=" { " />
-                <marker date="1499448734000" expanded="false" signature="3269:3275" ph=" }" />
-                <marker date="1499448734000" expanded="false" signature="3300:3311" ph=" { " />
-                <marker date="1499448734000" expanded="false" signature="3334:3340" ph=" }" />
-                <marker date="1499448734000" expanded="true" signature="3409:3695" ph="{...}" />
-                <marker date="1499448734000" expanded="true" signature="3773:4102" ph="{...}" />
-                <marker date="1499448734000" expanded="false" signature="4142:4153" ph=" { " />
-                <marker date="1499448734000" expanded="false" signature="4177:4183" ph=" }" />
-                <marker date="1499448734000" expanded="true" signature="4225:4441" ph="{...}" />
-                <marker date="1499448734000" expanded="true" signature="4516:5022" ph="{...}" />
-                <marker date="1499448734000" expanded="true" signature="5072:5358" ph="{...}" />
-                <marker date="1499448734000" expanded="true" signature="5401:6206" ph="{...}" />
-                <marker date="1499448734000" expanded="false" signature="6258:6269" ph=" { " />
-                <marker date="1499448734000" expanded="false" signature="6333:6339" ph=" }" />
-                <marker date="1499448734000" expanded="true" signature="6414:9408" ph="{...}" />
-                <marker date="1499448734000" expanded="true" signature="9490:10341" ph="{...}" />
-                <marker date="1499448734000" expanded="true" signature="10429:10871" ph="{...}" />
-                <marker date="1499448734000" expanded="true" signature="10936:11067" ph="{...}" />
-                <marker date="1499448734000" expanded="true" signature="11093:11333" ph="{...}" />
-                <marker date="1499448734000" expanded="true" signature="11366:12195" ph="{...}" />
-                <marker date="1499448734000" expanded="false" signature="12244:12255" ph=" { " />
-                <marker date="1499448734000" expanded="false" signature="12283:12289" ph=" }" />
-                <marker date="1499448734000" expanded="true" signature="12365:12600" ph="{...}" />
-                <marker date="1499448734000" expanded="false" signature="12634:12645" ph=" { " />
-                <marker date="1499448734000" expanded="false" signature="12713:12719" ph=" }" />
-                <marker date="1499448734000" expanded="true" signature="12767:12958" ph="{...}" />
-                <marker date="1499448734000" expanded="false" signature="12996:13007" ph=" { " />
-                <marker date="1499448734000" expanded="false" signature="13016:13022" ph=" }" />
-                <marker date="1499448734000" expanded="true" signature="13059:13206" ph="{...}" />
-                <marker date="1499448734000" expanded="true" signature="13243:13390" ph="{...}" />
-                <marker date="1499448734000" expanded="true" signature="13428:13575" ph="{...}" />
-                <marker date="1499448734000" expanded="false" signature="13614:13625" ph=" { " />
-                <marker date="1499448734000" expanded="false" signature="13654:13660" ph=" }" />
-                <marker date="1499448734000" expanded="false" signature="13704:13715" ph=" { " />
-                <marker date="1499448734000" expanded="false" signature="13728:13734" ph=" }" />
-                <marker date="1499448734000" expanded="false" signature="13775:13786" ph=" { " />
-                <marker date="1499448734000" expanded="false" signature="13799:13805" ph=" }" />
-                <marker date="1499448734000" expanded="false" signature="13854:13865" ph=" { " />
-                <marker date="1499448734000" expanded="false" signature="13878:13884" ph=" }" />
-                <marker date="1499448734000" expanded="false" signature="13937:13948" ph=" { " />
-                <marker date="1499448734000" expanded="false" signature="13961:13967" ph=" }" />
-                <marker date="1499448734000" expanded="false" signature="14023:14034" ph=" { " />
-                <marker date="1499448734000" expanded="false" signature="14047:14053" ph=" }" />
-                <marker date="1499448734000" expanded="true" signature="14123:14300" ph="{...}" />
-                <marker date="1499448734000" expanded="false" signature="14348:14359" ph=" { " />
-                <marker date="1499448734000" expanded="false" signature="14372:14378" ph=" }" />
-                <marker date="1499448734000" expanded="true" signature="14420:14535" ph="{...}" />
-                <marker date="1499448734000" expanded="true" signature="14592:14599" ph="{}" />
-                <marker date="1499448734000" expanded="false" signature="14643:14654" ph=" { " />
-                <marker date="1499448734000" expanded="false" signature="14665:14671" ph=" }" />
-                <marker date="1499448734000" expanded="false" signature="14716:14727" ph=" { " />
-                <marker date="1499448734000" expanded="false" signature="14736:14742" ph=" }" />
-                <marker date="1499448734000" expanded="false" signature="14787:14798" ph=" { " />
-                <marker date="1499448734000" expanded="false" signature="14831:14837" ph=" }" />
-                <marker date="1499448734000" expanded="true" signature="14908:14973" ph="{...}" />
-                <marker date="1499448734000" expanded="true" signature="15039:15305" ph="{...}" />
-                <marker date="1499448734000" expanded="true" signature="15396:15737" ph="{...}" />
-                <marker date="1499448734000" expanded="true" signature="15866:18158" ph="{...}" />
-                <marker date="1499448734000" expanded="false" signature="16876:16979" ph="accept(applet, installAID) → {" />
-                <marker date="1499448734000" expanded="false" signature="17586:17609" ph="}" />
-                <marker date="1499448734000" expanded="true" signature="18204:18628" ph="{...}" />
-                <marker date="1499448734000" expanded="true" signature="18334:18407" ph="{...}" />
-                <marker date="1499448734000" expanded="false" signature="18442:18457" ph=" { " />
-                <marker date="1499448734000" expanded="false" signature="18476:18486" ph=" }" />
-                <marker date="1499448734000" expanded="false" signature="18520:18535" ph=" { " />
-                <marker date="1499448734000" expanded="false" signature="18612:18622" ph=" }" />
               </folding>
             </state>
           </provider>
@@ -395,6 +299,10 @@
       <find>reset</find>
       <find>processIn</find>
       <find>verifyAnd</find>
+      <find>process</find>
+      <find>Util.arrayCopyNonAtomic</find>
+      <find>dofinal(tr</find>
+      <find>encrypt</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -785,7 +693,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="6086260352000" />
+        <entry key="$PROJECT_DIR$" value="6081324090000" />
         <entry key="$PROJECT_DIR$/applet/build.gradle" value="3162825728" />
         <entry key="$PROJECT_DIR$/build.gradle" value="806369882" />
         <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="566444372" />
@@ -988,8 +896,8 @@
     </option>
     <option name="projectSyncType">
       <map>
-        <entry key="$PROJECT_DIR$/../../SmartPGP" value="PREVIEW" />
         <entry key="$PROJECT_DIR$" value="RE_IMPORT" />
+        <entry key="$PROJECT_DIR$/../../SmartPGP" value="PREVIEW" />
       </map>
     </option>
   </component>
@@ -1030,71 +938,37 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="SmartPGP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jcard" type="b2602c69:ProjectViewProjectNode" />
               <item name="SmartPGP" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
-              <item name="SmartPGP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SmartPGP" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="applet" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="SmartPGP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jcard" type="b2602c69:ProjectViewProjectNode" />
               <item name="SmartPGP" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="applet" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="SmartPGP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SmartPGP" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="applet" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="SmartPGP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SmartPGP" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="applet" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SmartPGP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SmartPGP" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="applet" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="smartpgp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SmartPGP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jcard" type="b2602c69:ProjectViewProjectNode" />
               <item name="SmartPGP" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="SmartPGP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jcard" type="b2602c69:ProjectViewProjectNode" />
               <item name="SmartPGP" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="simpleapdu" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SmartPGP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="AndroidView" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1124,6 +998,63 @@
       <option name="HEIGHT" value="300" />
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <module />
+    </configuration>
+    <configuration name="SimpleAPDU" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="simpleapdu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="simpleapdu.SimpleAPDU" />
+      <option name="VM_PARAMETERS" value="-enableassertions -noverify" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="applet" />
+      <envs />
+    </configuration>
+    <configuration name="SimpleAPDU" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="simpleapdu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="simpleapdu.SimpleAPDU" />
+      <option name="VM_PARAMETERS" value="-enableassertions -noverify" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="jcard" />
+      <envs />
+    </configuration>
+    <configuration name="SimpleAPDU" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="simpleapdu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="simpleapdu.SimpleAPDU" />
+      <option name="VM_PARAMETERS" value="-enableassertions -noverify" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="jcard" />
+      <envs />
     </configuration>
     <configuration name="SimpleAPDU" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
@@ -1250,9 +1181,11 @@
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <recent_temporary>
-      <list size="2">
+      <list size="4">
         <item index="0" class="java.lang.String" itemvalue="Application.SimpleAPDU" />
         <item index="1" class="java.lang.String" itemvalue="Application.SimpleAPDU" />
+        <item index="2" class="java.lang.String" itemvalue="Application.SimpleAPDU" />
+        <item index="3" class="java.lang.String" itemvalue="Application.SimpleAPDU" />
       </list>
     </recent_temporary>
   </component>
@@ -1276,14 +1209,18 @@
       <workItem from="1523712764819" duration="10593000" />
       <workItem from="1523791178726" duration="8543000" />
       <workItem from="1523821846681" duration="4897000" />
+      <workItem from="1523880118830" duration="119000" />
+      <workItem from="1523886828260" duration="365000" />
+      <workItem from="1523968473659" duration="1261000" />
+      <workItem from="1523992106998" duration="4539000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33700000" />
+    <option name="totallyTimeSpent" value="39984000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="569" y="234" width="1857" height="1092" extended-state="6" />
+    <frame x="569" y="234" width="1855" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1292,10 +1229,10 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.48568508" sideWeight="0.5040431" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.48568508" sideWeight="0.5083558" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.48568508" sideWeight="0.49595687" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.48568508" sideWeight="0.4916442" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1335,7 +1272,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/applet/src/main/java/fr/anssi/smartpgp/SecureMessaging.java</url>
-          <line>306</line>
+          <line>321</line>
           <properties />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
@@ -1345,19 +1282,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/applet/src/main/java/fr/anssi/smartpgp/ECConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="22" column="19" lean-forward="false" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/applet/src/main/java/fr/anssi/smartpgp/ECCurves.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="27" column="19" lean-forward="false" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1365,7 +1293,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="28" column="19" lean-forward="false" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1373,7 +1300,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="27" column="19" lean-forward="false" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1381,7 +1307,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="954">
           <caret line="74" column="25" lean-forward="false" selection-start-line="74" selection-start-column="25" selection-end-line="74" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1393,16 +1318,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/simpleapdu/SimpleAPDU.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="24" lean-forward="false" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/simpleapdu/SimpleAPDU.java" />
     <entry file="file://$PROJECT_DIR$/applet/src/main/java/fr/anssi/smartpgp/Transients.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="756">
@@ -1418,7 +1334,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1944">
           <caret line="108" column="23" lean-forward="false" selection-start-line="108" selection-start-column="23" selection-end-line="108" selection-end-column="23" />
-          <folding />
+          <folding>
+            <element signature="e#53876#53908#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1438,13 +1356,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cardTools/SimulatedCardChannelLocal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="12" column="25" lean-forward="false" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cardTools/SimulatedCardChannelLocal.java" />
     <entry file="file://$PROJECT_DIR$/gradlew">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1473,7 +1385,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15264">
           <caret line="848" column="25" lean-forward="false" selection-start-line="848" selection-start-column="25" selection-end-line="848" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1487,34 +1398,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/simpleapdu/SimpleAPDU.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="24" lean-forward="false" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/simpleapdu/SimpleAPDU.java" />
     <entry file="file://$PROJECT_DIR$/applet/src/main/java/fr/anssi/smartpgp/SmartPGPApplet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1674">
           <caret line="116" column="27" lean-forward="false" selection-start-line="116" selection-start-column="27" selection-end-line="116" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/simpleapdu/SimpleAPDU.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="47" column="29" lean-forward="false" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#53876#53908#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/simpleapdu/SimpleAPDU.java" />
     <entry file="file://$PROJECT_DIR$/gradlew.bat">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1522,13 +1417,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cardTools/SimulatedCardChannelLocal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="28" lean-forward="false" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cardTools/SimulatedCardChannelLocal.java" />
     <entry file="file://$PROJECT_DIR$/gradlew">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1546,16 +1435,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/simpleapdu/SimpleAPDU.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/simpleapdu/SimpleAPDU.java" />
     <entry file="file://$PROJECT_DIR$/INTEGRATION.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -1584,22 +1464,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7290">
           <caret line="432" column="32" lean-forward="false" selection-start-line="432" selection-start-column="32" selection-end-line="432" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/libs/jacardsim-3.0.5/jcardsim-3.0.5-SNAPSHOT.jar!/javacard/framework/Util.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="16" column="30" lean-forward="false" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$PROJECT_DIR$/libs/jacardsim-3.0.5/jcardsim-3.0.5-SNAPSHOT.jar!/javacard/framework/Util.class" />
     <entry file="file://$PROJECT_DIR$/applet/src/main/java/fr/anssi/smartpgp/Fingerprint.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="27" column="19" lean-forward="false" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1607,7 +1479,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="954">
           <caret line="74" column="25" lean-forward="false" selection-start-line="74" selection-start-column="25" selection-end-line="74" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1615,7 +1486,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="27" column="19" lean-forward="false" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1623,7 +1493,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="22" column="19" lean-forward="false" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1631,7 +1500,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="27" column="19" lean-forward="false" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1639,183 +1507,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="28" column="19" lean-forward="false" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cardTools/SimulatedCardChannelLocal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="2" lean-forward="false" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/libs/jacardsim-3.0.5/jcardsim-3.0.5-SNAPSHOT.jar!/com/licel/jcardsim/io/CAD.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding>
-            <marker date="1499448734000" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1499448734000" expanded="false" signature="145:263" ph="..." />
-            <marker date="1499448734000" expanded="true" signature="509:1433" ph="{...}" />
-            <marker date="1499448734000" expanded="false" signature="1478:1489" ph=" { " />
-            <marker date="1499448734000" expanded="false" signature="1515:1521" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/libs/jacardsim-3.0.5/jcardsim-3.0.5-SNAPSHOT.jar!/com/licel/jcardsim/io/JavaxSmartCardInterface.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding>
-            <marker date="1499448734000" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1499448734000" expanded="false" signature="145:305" ph="..." />
-            <marker date="1499448734000" expanded="true" signature="401:408" ph="{}" />
-            <marker date="1499448734000" expanded="false" signature="470:481" ph=" { " />
-            <marker date="1499448734000" expanded="false" signature="496:502" ph=" }" />
-            <marker date="1499448734000" expanded="true" signature="569:655" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/libs/jacardsim-3.0.5/jcardsim-3.0.5-SNAPSHOT.jar!/com/licel/jcardsim/base/Simulator.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding>
-            <marker date="1499448734000" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1499448734000" expanded="false" signature="147:657" ph="..." />
-            <marker date="1499448734000" expanded="true" signature="1370:1381" ph=" { " />
-            <marker date="1499448734000" expanded="true" signature="1443:1449" ph=" }" />
-            <marker date="1499448734000" expanded="false" signature="1497:1508" ph=" { " />
-            <marker date="1499448734000" expanded="false" signature="1546:1552" ph=" }" />
-            <marker date="1499448734000" expanded="true" signature="1627:3571" ph="{...}" />
-            <marker date="1499448734000" expanded="true" signature="3681:4245" ph="{...}" />
-            <marker date="1499448734000" expanded="true" signature="4329:4630" ph="{...}" />
-            <marker date="1499448734000" expanded="true" signature="4727:4933" ph="{...}" />
-            <marker date="1499448734000" expanded="true" signature="5039:5357" ph="{...}" />
-            <marker date="1499448734000" expanded="true" signature="5457:5556" ph="{...}" />
-            <marker date="1499448734000" expanded="true" signature="5700:5916" ph="{...}" />
-            <marker date="1499448734000" expanded="true" signature="6047:6267" ph="{...}" />
-            <marker date="1499448734000" expanded="true" signature="6421:6657" ph="{...}" />
-            <marker date="1499448734000" expanded="true" signature="6697:6841" ph="{...}" />
-            <marker date="1499448734000" expanded="true" signature="6907:7017" ph="{...}" />
-            <marker date="1499448734000" expanded="true" signature="7092:7262" ph="{...}" />
-            <marker date="1499448734000" expanded="true" signature="7314:7472" ph="{...}" />
-            <marker date="1499448734000" expanded="true" signature="7498:7632" ph="{...}" />
-            <marker date="1499448734000" expanded="true" signature="7671:7812" ph="{...}" />
-            <marker date="1499448734000" expanded="false" signature="7840:7851" ph=" { " />
-            <marker date="1499448734000" expanded="false" signature="7867:7873" ph=" }" />
-            <marker date="1499448734000" expanded="true" signature="7927:9295" ph="{...}" />
-            <marker date="1499448734000" expanded="true" signature="9345:9556" ph="{...}" />
-            <marker date="1499448734000" expanded="false" signature="9589:9600" ph=" { " />
-            <marker date="1499448734000" expanded="false" signature="9621:9627" ph=" }" />
-            <marker date="1499448734000" expanded="true" signature="9703:9867" ph="{...}" />
-            <marker date="1499448734000" expanded="true" signature="9920:10462" ph="{...}" />
-            <marker date="1499448734000" expanded="false" signature="9959:9974" ph=" { " />
-            <marker date="1499448734000" expanded="false" signature="10020:10030" ph=" }" />
-            <marker date="1499448734000" expanded="true" signature="10108:10456" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/libs/jacardsim-3.0.5/jcardsim-3.0.5-SNAPSHOT.jar!/com/licel/jcardsim/base/SimulatorSystem.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding>
-            <marker date="1499448734000" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1499448734000" expanded="true" signature="301:319" ph="/**...*/" />
-            <marker date="1499448734000" expanded="true" signature="388:406" ph="/**...*/" />
-            <marker date="1499448734000" expanded="true" signature="646:653" ph="{}" />
-            <marker date="1499448734000" expanded="true" signature="701:967" ph="{...}" />
-            <marker date="1499448734000" expanded="true" signature="1051:1137" ph="{...}" />
-            <marker date="1499448734000" expanded="true" signature="1150:1472" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/libs/jacardsim-3.0.5/jcardsim-3.0.5-SNAPSHOT.jar!/com/licel/jcardsim/base/SimulatorRuntime.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding>
-            <marker date="1499448734000" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1499448734000" expanded="false" signature="147:974" ph="..." />
-            <marker date="1499448734000" expanded="true" signature="1832:1843" ph=" { " />
-            <marker date="1499448734000" expanded="true" signature="1871:1877" ph=" }" />
-            <marker date="1499448734000" expanded="true" signature="1940:3156" ph="{...}" />
-            <marker date="1499448734000" expanded="false" signature="3217:3228" ph=" { " />
-            <marker date="1499448734000" expanded="false" signature="3269:3275" ph=" }" />
-            <marker date="1499448734000" expanded="false" signature="3300:3311" ph=" { " />
-            <marker date="1499448734000" expanded="false" signature="3334:3340" ph=" }" />
-            <marker date="1499448734000" expanded="true" signature="3409:3695" ph="{...}" />
-            <marker date="1499448734000" expanded="true" signature="3773:4102" ph="{...}" />
-            <marker date="1499448734000" expanded="false" signature="4142:4153" ph=" { " />
-            <marker date="1499448734000" expanded="false" signature="4177:4183" ph=" }" />
-            <marker date="1499448734000" expanded="true" signature="4225:4441" ph="{...}" />
-            <marker date="1499448734000" expanded="true" signature="4516:5022" ph="{...}" />
-            <marker date="1499448734000" expanded="true" signature="5072:5358" ph="{...}" />
-            <marker date="1499448734000" expanded="true" signature="5401:6206" ph="{...}" />
-            <marker date="1499448734000" expanded="false" signature="6258:6269" ph=" { " />
-            <marker date="1499448734000" expanded="false" signature="6333:6339" ph=" }" />
-            <marker date="1499448734000" expanded="true" signature="6414:9408" ph="{...}" />
-            <marker date="1499448734000" expanded="true" signature="9490:10341" ph="{...}" />
-            <marker date="1499448734000" expanded="true" signature="10429:10871" ph="{...}" />
-            <marker date="1499448734000" expanded="true" signature="10936:11067" ph="{...}" />
-            <marker date="1499448734000" expanded="true" signature="11093:11333" ph="{...}" />
-            <marker date="1499448734000" expanded="true" signature="11366:12195" ph="{...}" />
-            <marker date="1499448734000" expanded="false" signature="12244:12255" ph=" { " />
-            <marker date="1499448734000" expanded="false" signature="12283:12289" ph=" }" />
-            <marker date="1499448734000" expanded="true" signature="12365:12600" ph="{...}" />
-            <marker date="1499448734000" expanded="false" signature="12634:12645" ph=" { " />
-            <marker date="1499448734000" expanded="false" signature="12713:12719" ph=" }" />
-            <marker date="1499448734000" expanded="true" signature="12767:12958" ph="{...}" />
-            <marker date="1499448734000" expanded="false" signature="12996:13007" ph=" { " />
-            <marker date="1499448734000" expanded="false" signature="13016:13022" ph=" }" />
-            <marker date="1499448734000" expanded="true" signature="13059:13206" ph="{...}" />
-            <marker date="1499448734000" expanded="true" signature="13243:13390" ph="{...}" />
-            <marker date="1499448734000" expanded="true" signature="13428:13575" ph="{...}" />
-            <marker date="1499448734000" expanded="false" signature="13614:13625" ph=" { " />
-            <marker date="1499448734000" expanded="false" signature="13654:13660" ph=" }" />
-            <marker date="1499448734000" expanded="false" signature="13704:13715" ph=" { " />
-            <marker date="1499448734000" expanded="false" signature="13728:13734" ph=" }" />
-            <marker date="1499448734000" expanded="false" signature="13775:13786" ph=" { " />
-            <marker date="1499448734000" expanded="false" signature="13799:13805" ph=" }" />
-            <marker date="1499448734000" expanded="false" signature="13854:13865" ph=" { " />
-            <marker date="1499448734000" expanded="false" signature="13878:13884" ph=" }" />
-            <marker date="1499448734000" expanded="false" signature="13937:13948" ph=" { " />
-            <marker date="1499448734000" expanded="false" signature="13961:13967" ph=" }" />
-            <marker date="1499448734000" expanded="false" signature="14023:14034" ph=" { " />
-            <marker date="1499448734000" expanded="false" signature="14047:14053" ph=" }" />
-            <marker date="1499448734000" expanded="true" signature="14123:14300" ph="{...}" />
-            <marker date="1499448734000" expanded="false" signature="14348:14359" ph=" { " />
-            <marker date="1499448734000" expanded="false" signature="14372:14378" ph=" }" />
-            <marker date="1499448734000" expanded="true" signature="14420:14535" ph="{...}" />
-            <marker date="1499448734000" expanded="true" signature="14592:14599" ph="{}" />
-            <marker date="1499448734000" expanded="false" signature="14643:14654" ph=" { " />
-            <marker date="1499448734000" expanded="false" signature="14665:14671" ph=" }" />
-            <marker date="1499448734000" expanded="false" signature="14716:14727" ph=" { " />
-            <marker date="1499448734000" expanded="false" signature="14736:14742" ph=" }" />
-            <marker date="1499448734000" expanded="false" signature="14787:14798" ph=" { " />
-            <marker date="1499448734000" expanded="false" signature="14831:14837" ph=" }" />
-            <marker date="1499448734000" expanded="true" signature="14908:14973" ph="{...}" />
-            <marker date="1499448734000" expanded="true" signature="15039:15305" ph="{...}" />
-            <marker date="1499448734000" expanded="true" signature="15396:15737" ph="{...}" />
-            <marker date="1499448734000" expanded="true" signature="15866:18158" ph="{...}" />
-            <marker date="1499448734000" expanded="false" signature="16876:16979" ph="accept(applet, installAID) → {" />
-            <marker date="1499448734000" expanded="false" signature="17586:17609" ph="}" />
-            <marker date="1499448734000" expanded="true" signature="18204:18628" ph="{...}" />
-            <marker date="1499448734000" expanded="true" signature="18334:18407" ph="{...}" />
-            <marker date="1499448734000" expanded="false" signature="18442:18457" ph=" { " />
-            <marker date="1499448734000" expanded="false" signature="18476:18486" ph=" }" />
-            <marker date="1499448734000" expanded="false" signature="18520:18535" ph=" { " />
-            <marker date="1499448734000" expanded="false" signature="18612:18622" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cardTools/SimulatedCardChannelLocal.java" />
+    <entry file="jar://$PROJECT_DIR$/libs/jacardsim-3.0.5/jcardsim-3.0.5-SNAPSHOT.jar!/com/licel/jcardsim/io/CAD.class" />
+    <entry file="jar://$PROJECT_DIR$/libs/jacardsim-3.0.5/jcardsim-3.0.5-SNAPSHOT.jar!/com/licel/jcardsim/io/JavaxSmartCardInterface.class" />
+    <entry file="jar://$PROJECT_DIR$/libs/jacardsim-3.0.5/jcardsim-3.0.5-SNAPSHOT.jar!/com/licel/jcardsim/base/Simulator.class" />
+    <entry file="jar://$PROJECT_DIR$/libs/jacardsim-3.0.5/jcardsim-3.0.5-SNAPSHOT.jar!/com/licel/jcardsim/base/SimulatorSystem.class" />
+    <entry file="jar://$PROJECT_DIR$/libs/jacardsim-3.0.5/jcardsim-3.0.5-SNAPSHOT.jar!/com/licel/jcardsim/base/SimulatorRuntime.class" />
     <entry file="jar:///usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar!/java/lang/Class.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10008">
@@ -1999,9 +1699,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/applet/src/main/java/fr/anssi/smartpgp/CmacKey.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="27" column="19" lean-forward="false" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/applet/src/main/java/fr/anssi/smartpgp/CmacSignature.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2556">
+          <caret line="167" column="23" lean-forward="false" selection-start-line="167" selection-start-column="23" selection-end-line="167" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/applet/src/main/java/fr/anssi/smartpgp/Common.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1368">
+          <caret line="97" column="33" lean-forward="false" selection-start-line="97" selection-start-column="33" selection-end-line="97" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cardTools/CardManager.java" />
+    <entry file="file://$PROJECT_DIR$/applet/src/main/java/fr/anssi/smartpgp/SecureMessaging.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="31" column="34" lean-forward="false" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/libs-sdks/jc304_kit/lib/api_classic.jar!/javacardx/crypto/Cipher.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="10" column="22" lean-forward="false" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/simpleapdu/SimpleAPDU.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="101" column="47" lean-forward="false" selection-start-line="101" selection-start-column="47" selection-end-line="101" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/applet/src/main/java/fr/anssi/smartpgp/Transients.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
+        <state relative-caret-position="415">
           <caret line="99" column="33" lean-forward="false" selection-start-line="99" selection-start-column="33" selection-end-line="99" selection-end-column="33" />
           <folding>
             <element signature="e#4508#4509#0" expanded="true" />
@@ -2010,61 +1759,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/applet/src/main/java/fr/anssi/smartpgp/CmacKey.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-336">
-          <caret line="27" column="19" lean-forward="false" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/applet/src/main/java/fr/anssi/smartpgp/CmacSignature.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-516">
-          <caret line="167" column="23" lean-forward="false" selection-start-line="167" selection-start-column="23" selection-end-line="167" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/applet/src/main/java/fr/anssi/smartpgp/Common.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-449">
-          <caret line="97" column="33" lean-forward="false" selection-start-line="97" selection-start-column="33" selection-end-line="97" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/applet/src/main/java/fr/anssi/smartpgp/SecureMessaging.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7462">
-          <caret line="31" column="34" lean-forward="false" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/applet/src/main/java/fr/anssi/smartpgp/SmartPGPApplet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24636">
-          <caret line="1684" column="8" lean-forward="true" selection-start-line="1684" selection-start-column="8" selection-end-line="1684" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/simpleapdu/SimpleAPDU.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state relative-caret-position="2041">
+          <caret line="1311" column="13" lean-forward="true" selection-start-line="1311" selection-start-column="13" selection-end-line="1311" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#53876#53908#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cardTools/CardManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
