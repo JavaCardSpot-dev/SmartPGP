@@ -38,7 +38,7 @@ public final class SmartPGPApplet extends Applet {
 
     public SmartPGPApplet() {
         cipher_aes_cbc_nopad = Cipher.getInstance(Cipher.ALG_AES_BLOCK_128_CBC_NOPAD, false);
-        random_data = RandomData.getInstance(RandomData.ALG_SECURE_RANDOM);
+        random_data = RandomData.getInstance(RandomData.ALG_SECURE_RANDOM); // RandomData.ALG_TRNG
 
         ec = new ECCurves();
 
@@ -73,7 +73,7 @@ public final class SmartPGPApplet extends Applet {
         // Erase output - we are recieving input so we already sent output
         tmp = transients.outputLength();
         if(tmp > 0) {
-            Util.arrayFillNonAtomic(transients.buffer, transients.outputStart(), tmp, (byte)0);
+            random_data.generateData(transients.buffer, transients.outputStart(), tmp);
         }
         transients.setChainingOutput(false);
         transients.setOutputStart((short)0);
@@ -98,7 +98,7 @@ public final class SmartPGPApplet extends Applet {
             // erase previous command from memory
             tmp = transients.chainingInputLength();
             if(tmp > 0) {
-                Util.arrayFillNonAtomic(transients.buffer, (short)0, tmp, (byte)0);
+                random_data.generateData(transients.buffer, (short)0, tmp);
             }
             transients.setChainingInputLength((short)0);
 
@@ -1651,7 +1651,7 @@ public final class SmartPGPApplet extends Applet {
             apdu.sendBytes((short)0, resp_le);
 
             // Erase sent bytes from memory
-            Util.arrayFillNonAtomic(transients.buffer, off, resp_le, (byte)0);
+            random_data.generateData(transients.buffer, off, resp_le);
 
             available_le -= resp_le;
             off += resp_le;
