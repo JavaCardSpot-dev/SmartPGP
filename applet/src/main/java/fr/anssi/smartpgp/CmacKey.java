@@ -33,7 +33,7 @@ public final class CmacKey {
 
     protected CmacKey(final short aesKeyLength) {
 
-        //TODO: randomize
+        ExecTimeRandomizer.randomize();
         key = (AESKey)KeyBuilder.buildKey(KeyBuilder.TYPE_AES_TRANSIENT_DESELECT,
                                           (short)(aesKeyLength * 8),
                                           false);
@@ -65,7 +65,7 @@ public final class CmacKey {
         cipher.init(key, Cipher.MODE_ENCRYPT);
 
         Util.arrayFillNonAtomic(k2, (short)0, Constants.AES_BLOCK_SIZE, (byte)0);
-        //TODO: randomize
+        ExecTimeRandomizer.randomize();
         cipher.doFinal(k2, (short)0, Constants.AES_BLOCK_SIZE,
                        k1, (short)0);
 

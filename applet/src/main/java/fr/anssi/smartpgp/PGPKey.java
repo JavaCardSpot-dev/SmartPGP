@@ -124,7 +124,7 @@ public final class PGPKey {
         }
 
         JCSystem.beginTransaction();
-        //TODO: randomize
+        ExecTimeRandomizer.randomize();
         if(certificate_length > 0) {
             Util.arrayFillNonAtomic(certificate, (short)0, certificate_length, (byte)0);
         }
@@ -222,7 +222,7 @@ public final class PGPKey {
 
 
     private final KeyPair generateRSA() {
-        //TODO: randomize
+        ExecTimeRandomizer.randomize();
         final PrivateKey priv = (PrivateKey)KeyBuilder.buildKey(KeyBuilder.TYPE_RSA_CRT_PRIVATE, rsaModulusBitSize(), false);
         final RSAPublicKey pub = (RSAPublicKey)KeyBuilder.buildKey(KeyBuilder.TYPE_RSA_PUBLIC, rsaModulusBitSize(), false);
 
@@ -238,7 +238,7 @@ public final class PGPKey {
 
     private final KeyPair generateEC(final ECCurves ec) {
 
-        //TODO: randomize
+        ExecTimeRandomizer.randomize();
         final ECParams params = ecParams(ec);
 
         final ECPrivateKey priv = (ECPrivateKey)KeyBuilder.buildKey(KeyBuilder.TYPE_EC_FP_PRIVATE, params.nb_bits, false);
@@ -290,7 +290,7 @@ public final class PGPKey {
         final short attr_modulus_bit_size = rsaModulusBitSize();
         final short attr_modulus_byte_size = Common.bitsToBytes(attr_modulus_bit_size);
 
-        //TODO: randomize
+        ExecTimeRandomizer.randomize();
         final RSAPrivateCrtKey priv = (RSAPrivateCrtKey)KeyBuilder.buildKey(KeyBuilder.TYPE_RSA_CRT_PRIVATE, attr_modulus_bit_size, false);
         final RSAPublicKey pub = (RSAPublicKey)KeyBuilder.buildKey(KeyBuilder.TYPE_RSA_PUBLIC, attr_modulus_bit_size, false);
 
@@ -378,7 +378,7 @@ public final class PGPKey {
                                       final byte tag_count, final byte[] tag_val, final short[] tag_len) {
         final ECParams params = ecParams(ec);
 
-        //TODO: randomize
+        ExecTimeRandomizer.randomize();
         final ECPrivateKey priv = (ECPrivateKey)KeyBuilder.buildKey(KeyBuilder.TYPE_EC_FP_PRIVATE,
                                                                     params.nb_bits,
                                                                     false);
@@ -609,7 +609,7 @@ public final class PGPKey {
 
         byte[] sha_header = null;
 
-        //TODO: randomize
+        ExecTimeRandomizer.randomize();
         if(isRsa()) {
 
             if(!forAuth) {
@@ -746,7 +746,7 @@ public final class PGPKey {
 
         short off = 0;
 
-        //TODO: randomize
+        ExecTimeRandomizer.randomize();
         if(isRsa()) {
             final short modulus_size = Common.bitsToBytes(rsaModulusBitSize());
 

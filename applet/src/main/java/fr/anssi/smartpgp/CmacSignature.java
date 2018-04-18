@@ -220,7 +220,7 @@ public final class CmacSignature {
             return 0;
         }
 
-        //TODO randomize
+        ExecTimeRandomizer.randomize();
         compute(inBuf, inOff, inLen);
 
         Util.arrayCopyNonAtomic(block_prev, (short)0,

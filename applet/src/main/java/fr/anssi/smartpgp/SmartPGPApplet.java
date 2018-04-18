@@ -701,7 +701,7 @@ public final class SmartPGPApplet extends Applet {
             transients.setUserPinMode81(false);
             transients.setUserPinMode82(false);
             JCSystem.beginTransaction();
-            //TODO: randomize
+            ExecTimeRandomizer.randomize();
             data.user_pin_length = (byte)(lc - off);
             data.user_pin.update(transients.buffer, off, data.user_pin_length);
             JCSystem.commitTransaction();
@@ -736,7 +736,7 @@ public final class SmartPGPApplet extends Applet {
                 return;
             }
             JCSystem.beginTransaction();
-            //TODO randomize
+            ExecTimeRandomizer.randomize();
             data.admin_pin_length = (byte)(lc - off);
             data.admin_pin.update(transients.buffer, off, data.admin_pin_length);
             JCSystem.commitTransaction();
@@ -794,7 +794,7 @@ public final class SmartPGPApplet extends Applet {
             transients.setUserPinMode81(false);
             transients.setUserPinMode82(false);
             JCSystem.beginTransaction();
-            //TODO: randomize
+            ExecTimeRandomizer.randomize();
             data.user_pin_length = (byte)(lc - off);
             data.user_pin.update(transients.buffer, off, data.user_pin_length);
             JCSystem.commitTransaction();
@@ -818,7 +818,7 @@ public final class SmartPGPApplet extends Applet {
             transients.setUserPinMode81(false);
             transients.setUserPinMode82(false);
             JCSystem.beginTransaction();
-            //TODO: randomize
+            ExecTimeRandomizer.randomize();
             data.user_pin_length = (byte)lc;
             data.user_pin.update(transients.buffer, (short)0, data.user_pin_length);
             JCSystem.commitTransaction();
@@ -872,7 +872,7 @@ public final class SmartPGPApplet extends Applet {
             case Constants.CRT_SIGNATURE_KEY:
                 k = data.pgp_keys[Persistent.PGP_KEYS_OFFSET_SIG];
                 JCSystem.beginTransaction();
-                //TODO: randomize
+                ExecTimeRandomizer.randomize();
                 Util.arrayFillNonAtomic(data.digital_signature_counter,
                                         (short)0, (byte)data.digital_signature_counter.length,
                                         (byte)0);
@@ -917,7 +917,7 @@ public final class SmartPGPApplet extends Applet {
                     return;
                 }
                 JCSystem.beginTransaction();
-                //TODO: randomize
+                ExecTimeRandomizer.randomize();
                 if(data.name_length > 0) {
                     Util.arrayFillNonAtomic(data.name, (short)0, data.name_length, (byte)0);
                 }
@@ -934,7 +934,7 @@ public final class SmartPGPApplet extends Applet {
                     return;
                 }
                 JCSystem.beginTransaction();
-                //TODO: randomize
+                ExecTimeRandomizer.randomize();
                 if(data.login_length > 0) {
                     Util.arrayFillNonAtomic(data.login, (short)0, data.login_length, (byte)0);
                 }
@@ -951,7 +951,7 @@ public final class SmartPGPApplet extends Applet {
                     return;
                 }
                 JCSystem.beginTransaction();
-                //TODO: randomize
+                ExecTimeRandomizer.randomize();
                 if(data.lang_length > 0) {
                     Util.arrayFillNonAtomic(data.lang, (short)0, data.lang_length, (byte)0);
                 }
@@ -988,7 +988,7 @@ public final class SmartPGPApplet extends Applet {
                     return;
                 }
                 JCSystem.beginTransaction();
-                //TODO: randomize
+                ExecTimeRandomizer.randomize();
                 if(data.url_length > 0) {
                     Util.arrayFillNonAtomic(data.url, (short)0, data.url_length, (byte)0);
                 }
@@ -1005,7 +1005,7 @@ public final class SmartPGPApplet extends Applet {
                     return;
                 }
                 JCSystem.beginTransaction();
-                //TODO: randomize
+                ExecTimeRandomizer.randomize();
                 if(data.do_0101_length > 0) {
                     Util.arrayFillNonAtomic(data.do_0101, (short)0, data.do_0101_length, (byte)0);
                 }
@@ -1022,7 +1022,7 @@ public final class SmartPGPApplet extends Applet {
                     return;
                 }
                 JCSystem.beginTransaction();
-                //TODO: randomize
+                ExecTimeRandomizer.randomize();
                 if(data.do_0102_length > 0) {
                     Util.arrayFillNonAtomic(data.do_0102, (short)0, data.do_0102_length, (byte)0);
                 }
@@ -1039,7 +1039,7 @@ public final class SmartPGPApplet extends Applet {
                     return;
                 }
                 JCSystem.beginTransaction();
-                //TODO: randomize
+                ExecTimeRandomizer.randomize();
                 if(data.do_0103_length > 0) {
                     Util.arrayFillNonAtomic(data.do_0103, (short)0, data.do_0103_length, (byte)0);
                 }
@@ -1056,7 +1056,7 @@ public final class SmartPGPApplet extends Applet {
                     return;
                 }
                 JCSystem.beginTransaction();
-                //TODO: randomize
+                ExecTimeRandomizer.randomize();
                 if(data.do_0104_length > 0) {
                     Util.arrayFillNonAtomic(data.do_0104, (short)0, data.do_0104_length, (byte)0);
                 }
@@ -1072,7 +1072,7 @@ public final class SmartPGPApplet extends Applet {
                     return;
                 }
                 JCSystem.beginTransaction();
-                //TODO: randomize
+                ExecTimeRandomizer.randomize();
                 if(data.aes_key != null) {
                     data.aes_key.clearKey();
                 }
@@ -1097,7 +1097,7 @@ public final class SmartPGPApplet extends Applet {
                 assertAdmin();
                 data.pgp_keys[Persistent.PGP_KEYS_OFFSET_SIG].setAttributes(ec, buf, (short)0, lc);
                 JCSystem.beginTransaction();
-                //TODO: randomize
+                ExecTimeRandomizer.randomize();
                 Util.arrayFillNonAtomic(data.digital_signature_counter, (short)0,
                                         (byte)data.digital_signature_counter.length, (byte)0);
                 JCSystem.commitTransaction();
@@ -1191,7 +1191,7 @@ public final class SmartPGPApplet extends Applet {
                     }
                 }
                 JCSystem.beginTransaction();
-                //TODO: randomize
+                ExecTimeRandomizer.randomize();
                 data.user_puk_length = (byte)lc;
                 data.user_puk.update(buf, (short)0, data.user_puk_length);
                 JCSystem.commitTransaction();
@@ -1206,7 +1206,7 @@ public final class SmartPGPApplet extends Applet {
                     return;
                 }
                 JCSystem.beginTransaction();
-                //TODO: randomize
+                ExecTimeRandomizer.randomize();
                 if(data.key_derivation_function_length > 0) {
                     Util.arrayFillNonAtomic(data.key_derivation_function, (short)0, data.key_derivation_function_length, (byte)0);
                 }
@@ -1227,7 +1227,7 @@ public final class SmartPGPApplet extends Applet {
 
         final byte[] buf = transients.buffer;
 
-        //TODO: randomize
+        ExecTimeRandomizer.randomize();
         if(((p1 != (byte)0x80) && (p1 != (byte)0x81)) ||
            (p2 != 0)) {
             ISOException.throwIt(ISO7816.SW_WRONG_P1P2);
@@ -1265,7 +1265,7 @@ public final class SmartPGPApplet extends Applet {
             return 0;
         }
 
-        //TODO: randomize
+        ExecTimeRandomizer.randomize();
         if(p1 == (byte)0x80) {
 
             assertAdmin();
@@ -1274,7 +1274,7 @@ public final class SmartPGPApplet extends Applet {
 
             if(do_reset) {
                 JCSystem.beginTransaction();
-                //TODO: randomize
+                ExecTimeRandomizer.randomize();
                 Util.arrayFillNonAtomic(data.digital_signature_counter, (short)0,
                                         (byte)data.digital_signature_counter.length, (byte)0);
                 JCSystem.commitTransaction();
@@ -1300,7 +1300,7 @@ public final class SmartPGPApplet extends Applet {
 
             byte i = 0;
             JCSystem.beginTransaction();
-            //TODO: randomize
+            ExecTimeRandomizer.randomize();
             while(data.digital_signature_counter[(byte)(data.digital_signature_counter.length - i - 1)] == (byte)0xff) {
                 ++i;
             }
