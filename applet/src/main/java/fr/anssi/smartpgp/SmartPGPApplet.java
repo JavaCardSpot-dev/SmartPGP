@@ -1306,12 +1306,7 @@ public final class SmartPGPApplet extends Applet {
                 cipher_aes_cbc_nopad.init(data.aes_key, Cipher.MODE_DECRYPT);
 
                 final short res = cipher_aes_cbc_nopad.doFinal(transients.buffer, (short)1, (short)(lc - 1),
-                                                               transients.buffer, lc);
-
-                Util.arrayCopyNonAtomic(transients.buffer, lc,
-                                        transients.buffer, (short)0, res);
-
-                Util.arrayFillNonAtomic(transients.buffer, lc, res, (byte)0);
+                                                               transients.buffer, (short)0);
 
                 return res;
             }
@@ -1337,13 +1332,9 @@ public final class SmartPGPApplet extends Applet {
             cipher_aes_cbc_nopad.init(data.aes_key, Cipher.MODE_ENCRYPT);
 
             final short res = cipher_aes_cbc_nopad.doFinal(transients.buffer, (short)0, lc,
-                                                           transients.buffer, (short)(lc + 1));
+                                                           transients.buffer, (short)(1));
 
-            transients.buffer[lc] = (byte)0x02;
-            Util.arrayCopyNonAtomic(transients.buffer, lc,
-                                    transients.buffer, (short)0, (short)(res + 1));
-
-            Util.arrayFillNonAtomic(transients.buffer, (short)(lc + 1), res, (byte)0);
+            transients.buffer[(short)0] = (byte)0x02;
 
             return (short)(res + 1);
         }
