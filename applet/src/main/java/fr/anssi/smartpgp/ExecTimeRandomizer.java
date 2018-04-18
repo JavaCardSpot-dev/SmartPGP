@@ -1,5 +1,8 @@
 package fr.anssi.smartpgp;
 
+import javacard.framework.JCSystem;
+import javacard.security.RandomData;
+
 public class ExecTimeRandomizer {
 
     /**
@@ -14,6 +17,10 @@ public class ExecTimeRandomizer {
 
         //extremely naive implementation, demonstrative purposes
         //TODO use more sophisticated approach
-        for (short i = (short) 0; i < (short) 100000; ++i){}
+        RandomData random_data = RandomData.getInstance(RandomData.ALG_SECURE_RANDOM);
+        byte[] count = JCSystem.makeTransientByteArray((short) 1,
+                JCSystem.CLEAR_ON_DESELECT);
+        random_data.generateData(count,(short) 0,(short) 1);
+        for (short i = (short) 0; i < (short) count[1]; ++i){}
     }
 }
