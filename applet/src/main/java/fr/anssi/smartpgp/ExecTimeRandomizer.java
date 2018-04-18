@@ -14,6 +14,6 @@ public class ExecTimeRandomizer {
 
         //extremely naive implementation, demonstrative purposes
         //TODO use more sophisticated approach
-        for (short i = 0; i < 100000; ++i){}
+        for (short i = (short) 0; i < (short) 100000; ++i){}
     }
 }
