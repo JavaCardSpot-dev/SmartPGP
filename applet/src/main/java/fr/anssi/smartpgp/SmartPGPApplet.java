@@ -143,36 +143,54 @@ public final class SmartPGPApplet extends Applet {
     private final void sensitiveData() {
         final byte proto = APDU.getProtocol();
 
-        //TODO: double check
+        //double check - fault protection
         if(((proto & APDU.PROTOCOL_MEDIA_MASK) == APDU.PROTOCOL_MEDIA_CONTACTLESS_TYPE_A) ||
-           ((proto & APDU.PROTOCOL_MEDIA_MASK) == APDU.PROTOCOL_MEDIA_CONTACTLESS_TYPE_B)) {
-            if(sm.isInitialized() && !transients.secureMessagingOk()) {
-                ISOException.throwIt(ISO7816.SW_CONDITIONS_NOT_SATISFIED);
-                return;
+                ((proto & APDU.PROTOCOL_MEDIA_MASK) == APDU.PROTOCOL_MEDIA_CONTACTLESS_TYPE_B)){
+            if(((proto & APDU.PROTOCOL_MEDIA_MASK) == APDU.PROTOCOL_MEDIA_CONTACTLESS_TYPE_A) ||
+                    ((proto & APDU.PROTOCOL_MEDIA_MASK) == APDU.PROTOCOL_MEDIA_CONTACTLESS_TYPE_B)) {
+                if(sm.isInitialized() && !transients.secureMessagingOk()) {
+                    ISOException.throwIt(ISO7816.SW_CONDITIONS_NOT_SATISFIED);
+                    return;
+                }
             }
         }
+
     }
 
     private final void assertAdmin() {
-        //TODO: double check
+        //double check - fault protection
         if(!data.admin_pin.isValidated()) {
             ISOException.throwIt(ISO7816.SW_SECURITY_STATUS_NOT_SATISFIED);
+        } else {
+            if(!data.admin_pin.isValidated()) {
+                ISOException.throwIt(ISO7816.SW_SECURITY_STATUS_NOT_SATISFIED);
+            }
         }
+
+
     }
 
     private final void assertUserMode81() {
 
-        //TODO: double check
+        //double check - fault protection
         if(!data.user_pin.isValidated() || !transients.userPinMode81()) {
             ISOException.throwIt(ISO7816.SW_SECURITY_STATUS_NOT_SATISFIED);
+        } else {
+            if(!data.user_pin.isValidated() || !transients.userPinMode81()) {
+                ISOException.throwIt(ISO7816.SW_SECURITY_STATUS_NOT_SATISFIED);
+            }
         }
     }
 
     private final void assertUserMode82() {
 
-        //TODO: double check
+        //double check - fault protection
         if(!data.user_pin.isValidated() || !transients.userPinMode82()) {
             ISOException.throwIt(ISO7816.SW_SECURITY_STATUS_NOT_SATISFIED);
+        } else {
+            if(!data.user_pin.isValidated() || !transients.userPinMode82()) {
+                ISOException.throwIt(ISO7816.SW_SECURITY_STATUS_NOT_SATISFIED);
+            }
         }
     }
 
@@ -529,26 +547,35 @@ public final class SmartPGPApplet extends Applet {
 
                 switch(p2) {
                 case (byte)0x81:
-                    //TODO: double check
+                    //double check - fault protection
                     if(data.user_pin.isValidated() && transients.userPinMode81()) {
-                        return;
+                        if(data.user_pin.isValidated() && transients.userPinMode81()) {
+                            return;
+                        }
                     }
+
                     remaining = data.user_pin.getTriesRemaining();
                     break;
 
                 case (byte)0x82:
-                    //TODO: double check
-                    if(data.user_pin.isValidated() && transients.userPinMode82()) {
-                        return;
+                    //double check - fault protection
+                    if(data.user_pin.isValidated() && transients.userPinMode82()){
+                        if(data.user_pin.isValidated() && transients.userPinMode82()) {
+                            return;
+                        }
                     }
+
                     remaining = data.user_pin.getTriesRemaining();
                     break;
 
                 case (byte)0x83:
-                    //TODO: double check
-                    if(data.admin_pin.isValidated()) {
-                        return;
+                    //double check - fault protection
+                    if(data.admin_pin.isValidated()){
+                        if(data.admin_pin.isValidated()) {
+                            return;
+                        }
                     }
+
                     remaining = data.admin_pin.getTriesRemaining();
                     break;
 
@@ -585,10 +612,15 @@ public final class SmartPGPApplet extends Applet {
                         transients.setUserPinMode82(false);
                     }
 
-                    //TODO: double check
+                    //double check - fault protection
                     if(!data.user_pin.check(transients.buffer, (short)0, (byte)lc)) {
                         ISOException.throwIt(ISO7816.SW_SECURITY_STATUS_NOT_SATISFIED);
                         return;
+                    } else {
+                        if(!data.user_pin.check(transients.buffer, (short)0, (byte)lc)) {
+                            ISOException.throwIt(ISO7816.SW_SECURITY_STATUS_NOT_SATISFIED);
+                            return;
+                        }
                     }
 
                     if(p2 == (byte)0x81) {
@@ -612,10 +644,15 @@ public final class SmartPGPApplet extends Applet {
                         }
                     }
 
-                    //TODO: double check
+                    //double check - fault protection
                     if(!data.admin_pin.check(transients.buffer, (short)0, (byte)lc)) {
                         ISOException.throwIt(ISO7816.SW_SECURITY_STATUS_NOT_SATISFIED);
                         return;
+                    } else {
+                        if(!data.admin_pin.check(transients.buffer, (short)0, (byte)lc)) {
+                            ISOException.throwIt(ISO7816.SW_SECURITY_STATUS_NOT_SATISFIED);
+                            return;
+                        }
                     }
                     return;
 
@@ -642,10 +679,13 @@ public final class SmartPGPApplet extends Applet {
                 return;
 
             case (byte)0x83:
-                //TODO: double check
-                if(data.admin_pin.isValidated()) {
-                    data.admin_pin.reset();
+                //double check - fault protection
+                if(data.admin_pin.isValidated()){
+                    if(data.admin_pin.isValidated()) {
+                        data.admin_pin.reset();
+                    }
                 }
+
                 return;
 
             default:
@@ -693,10 +733,15 @@ public final class SmartPGPApplet extends Applet {
                 }
             }
             off = data.user_pin_length;
-            //TODO: double check
+            //double check - fault protection
             if(!data.user_pin.check(transients.buffer, (short)0, off)) {
                 ISOException.throwIt(ISO7816.SW_SECURITY_STATUS_NOT_SATISFIED);
                 return;
+            } else {
+                if(!data.user_pin.check(transients.buffer, (short)0, off)) {
+                    ISOException.throwIt(ISO7816.SW_SECURITY_STATUS_NOT_SATISFIED);
+                    return;
+                }
             }
             transients.setUserPinMode81(false);
             transients.setUserPinMode82(false);
@@ -730,10 +775,15 @@ public final class SmartPGPApplet extends Applet {
                 }
             }
             off = data.admin_pin_length;
-            //TODO: double check
+            //double check - fault protection
             if(!data.admin_pin.check(transients.buffer, (short)0, off)) {
                 ISOException.throwIt(ISO7816.SW_SECURITY_STATUS_NOT_SATISFIED);
                 return;
+            } else {
+                if(!data.admin_pin.check(transients.buffer, (short)0, off)) {
+                    ISOException.throwIt(ISO7816.SW_SECURITY_STATUS_NOT_SATISFIED);
+                    return;
+                }
             }
             JCSystem.beginTransaction();
             ExecTimeRandomizer.randomize();
@@ -786,10 +836,15 @@ public final class SmartPGPApplet extends Applet {
                                        Constants.USER_PUK_MAX_SIZE_FORMAT_2);
             }
             off = data.user_puk_length;
-            //TODO: double check
+            //double check - fault protection
             if(!data.user_puk.check(transients.buffer, (short)0, off)) {
                 ISOException.throwIt(ISO7816.SW_SECURITY_STATUS_NOT_SATISFIED);
                 return;
+            } else {
+                if(!data.user_puk.check(transients.buffer, (short)0, off)) {
+                    ISOException.throwIt(ISO7816.SW_SECURITY_STATUS_NOT_SATISFIED);
+                    return;
+                }
             }
             transients.setUserPinMode81(false);
             transients.setUserPinMode82(false);
@@ -1429,10 +1484,15 @@ public final class SmartPGPApplet extends Applet {
             return;
         }
 
-        //TODO: double check
+        //double check - fault protection
         if(data.admin_pin.getTriesRemaining() <= 0) {
             data.isTerminated = true;
             return;
+        } else {
+            if(data.admin_pin.getTriesRemaining() <= 0) {
+                data.isTerminated = true;
+                return;
+            }
         }
 
         assertAdmin();
