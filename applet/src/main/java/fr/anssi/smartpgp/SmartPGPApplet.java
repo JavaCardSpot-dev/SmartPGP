@@ -143,6 +143,7 @@ public final class SmartPGPApplet extends Applet {
     private final void sensitiveData() {
         final byte proto = APDU.getProtocol();
 
+        //TODO: double check
         if(((proto & APDU.PROTOCOL_MEDIA_MASK) == APDU.PROTOCOL_MEDIA_CONTACTLESS_TYPE_A) ||
            ((proto & APDU.PROTOCOL_MEDIA_MASK) == APDU.PROTOCOL_MEDIA_CONTACTLESS_TYPE_B)) {
             if(sm.isInitialized() && !transients.secureMessagingOk()) {
@@ -153,18 +154,23 @@ public final class SmartPGPApplet extends Applet {
     }
 
     private final void assertAdmin() {
+        //TODO: double check
         if(!data.admin_pin.isValidated()) {
             ISOException.throwIt(ISO7816.SW_SECURITY_STATUS_NOT_SATISFIED);
         }
     }
 
     private final void assertUserMode81() {
+
+        //TODO: double check
         if(!data.user_pin.isValidated() || !transients.userPinMode81()) {
             ISOException.throwIt(ISO7816.SW_SECURITY_STATUS_NOT_SATISFIED);
         }
     }
 
     private final void assertUserMode82() {
+
+        //TODO: double check
         if(!data.user_pin.isValidated() || !transients.userPinMode82()) {
             ISOException.throwIt(ISO7816.SW_SECURITY_STATUS_NOT_SATISFIED);
         }
@@ -523,6 +529,7 @@ public final class SmartPGPApplet extends Applet {
 
                 switch(p2) {
                 case (byte)0x81:
+                    //TODO: double check
                     if(data.user_pin.isValidated() && transients.userPinMode81()) {
                         return;
                     }
@@ -530,6 +537,7 @@ public final class SmartPGPApplet extends Applet {
                     break;
 
                 case (byte)0x82:
+                    //TODO: double check
                     if(data.user_pin.isValidated() && transients.userPinMode82()) {
                         return;
                     }
@@ -537,6 +545,7 @@ public final class SmartPGPApplet extends Applet {
                     break;
 
                 case (byte)0x83:
+                    //TODO: double check
                     if(data.admin_pin.isValidated()) {
                         return;
                     }
@@ -576,6 +585,7 @@ public final class SmartPGPApplet extends Applet {
                         transients.setUserPinMode82(false);
                     }
 
+                    //TODO: double check
                     if(!data.user_pin.check(transients.buffer, (short)0, (byte)lc)) {
                         ISOException.throwIt(ISO7816.SW_SECURITY_STATUS_NOT_SATISFIED);
                         return;
@@ -602,6 +612,7 @@ public final class SmartPGPApplet extends Applet {
                         }
                     }
 
+                    //TODO: double check
                     if(!data.admin_pin.check(transients.buffer, (short)0, (byte)lc)) {
                         ISOException.throwIt(ISO7816.SW_SECURITY_STATUS_NOT_SATISFIED);
                         return;
@@ -631,6 +642,7 @@ public final class SmartPGPApplet extends Applet {
                 return;
 
             case (byte)0x83:
+                //TODO: double check
                 if(data.admin_pin.isValidated()) {
                     data.admin_pin.reset();
                 }
@@ -681,6 +693,7 @@ public final class SmartPGPApplet extends Applet {
                 }
             }
             off = data.user_pin_length;
+            //TODO: double check
             if(!data.user_pin.check(transients.buffer, (short)0, off)) {
                 ISOException.throwIt(ISO7816.SW_SECURITY_STATUS_NOT_SATISFIED);
                 return;
@@ -688,6 +701,7 @@ public final class SmartPGPApplet extends Applet {
             transients.setUserPinMode81(false);
             transients.setUserPinMode82(false);
             JCSystem.beginTransaction();
+            //TODO: randomize
             data.user_pin_length = (byte)(lc - off);
             data.user_pin.update(transients.buffer, off, data.user_pin_length);
             JCSystem.commitTransaction();
@@ -716,11 +730,13 @@ public final class SmartPGPApplet extends Applet {
                 }
             }
             off = data.admin_pin_length;
+            //TODO: double check
             if(!data.admin_pin.check(transients.buffer, (short)0, off)) {
                 ISOException.throwIt(ISO7816.SW_SECURITY_STATUS_NOT_SATISFIED);
                 return;
             }
             JCSystem.beginTransaction();
+            //TODO randomize
             data.admin_pin_length = (byte)(lc - off);
             data.admin_pin.update(transients.buffer, off, data.admin_pin_length);
             JCSystem.commitTransaction();
@@ -770,6 +786,7 @@ public final class SmartPGPApplet extends Applet {
                                        Constants.USER_PUK_MAX_SIZE_FORMAT_2);
             }
             off = data.user_puk_length;
+            //TODO: double check
             if(!data.user_puk.check(transients.buffer, (short)0, off)) {
                 ISOException.throwIt(ISO7816.SW_SECURITY_STATUS_NOT_SATISFIED);
                 return;
@@ -777,6 +794,7 @@ public final class SmartPGPApplet extends Applet {
             transients.setUserPinMode81(false);
             transients.setUserPinMode82(false);
             JCSystem.beginTransaction();
+            //TODO: randomize
             data.user_pin_length = (byte)(lc - off);
             data.user_pin.update(transients.buffer, off, data.user_pin_length);
             JCSystem.commitTransaction();
@@ -800,6 +818,7 @@ public final class SmartPGPApplet extends Applet {
             transients.setUserPinMode81(false);
             transients.setUserPinMode82(false);
             JCSystem.beginTransaction();
+            //TODO: randomize
             data.user_pin_length = (byte)lc;
             data.user_pin.update(transients.buffer, (short)0, data.user_pin_length);
             JCSystem.commitTransaction();
@@ -825,6 +844,7 @@ public final class SmartPGPApplet extends Applet {
         if(isOdd) {
 
             assertAdmin();
+
 
             if((p1 != (byte)0x3f) || (p2 != (byte)0xff)) {
                 ISOException.throwIt(ISO7816.SW_WRONG_P1P2);
@@ -852,6 +872,7 @@ public final class SmartPGPApplet extends Applet {
             case Constants.CRT_SIGNATURE_KEY:
                 k = data.pgp_keys[Persistent.PGP_KEYS_OFFSET_SIG];
                 JCSystem.beginTransaction();
+                //TODO: randomize
                 Util.arrayFillNonAtomic(data.digital_signature_counter,
                                         (short)0, (byte)data.digital_signature_counter.length,
                                         (byte)0);
@@ -896,6 +917,7 @@ public final class SmartPGPApplet extends Applet {
                     return;
                 }
                 JCSystem.beginTransaction();
+                //TODO: randomize
                 if(data.name_length > 0) {
                     Util.arrayFillNonAtomic(data.name, (short)0, data.name_length, (byte)0);
                 }
@@ -912,6 +934,7 @@ public final class SmartPGPApplet extends Applet {
                     return;
                 }
                 JCSystem.beginTransaction();
+                //TODO: randomize
                 if(data.login_length > 0) {
                     Util.arrayFillNonAtomic(data.login, (short)0, data.login_length, (byte)0);
                 }
@@ -928,6 +951,7 @@ public final class SmartPGPApplet extends Applet {
                     return;
                 }
                 JCSystem.beginTransaction();
+                //TODO: randomize
                 if(data.lang_length > 0) {
                     Util.arrayFillNonAtomic(data.lang, (short)0, data.lang_length, (byte)0);
                 }
@@ -964,6 +988,7 @@ public final class SmartPGPApplet extends Applet {
                     return;
                 }
                 JCSystem.beginTransaction();
+                //TODO: randomize
                 if(data.url_length > 0) {
                     Util.arrayFillNonAtomic(data.url, (short)0, data.url_length, (byte)0);
                 }
@@ -980,6 +1005,7 @@ public final class SmartPGPApplet extends Applet {
                     return;
                 }
                 JCSystem.beginTransaction();
+                //TODO: randomize
                 if(data.do_0101_length > 0) {
                     Util.arrayFillNonAtomic(data.do_0101, (short)0, data.do_0101_length, (byte)0);
                 }
@@ -996,6 +1022,7 @@ public final class SmartPGPApplet extends Applet {
                     return;
                 }
                 JCSystem.beginTransaction();
+                //TODO: randomize
                 if(data.do_0102_length > 0) {
                     Util.arrayFillNonAtomic(data.do_0102, (short)0, data.do_0102_length, (byte)0);
                 }
@@ -1012,6 +1039,7 @@ public final class SmartPGPApplet extends Applet {
                     return;
                 }
                 JCSystem.beginTransaction();
+                //TODO: randomize
                 if(data.do_0103_length > 0) {
                     Util.arrayFillNonAtomic(data.do_0103, (short)0, data.do_0103_length, (byte)0);
                 }
@@ -1028,6 +1056,7 @@ public final class SmartPGPApplet extends Applet {
                     return;
                 }
                 JCSystem.beginTransaction();
+                //TODO: randomize
                 if(data.do_0104_length > 0) {
                     Util.arrayFillNonAtomic(data.do_0104, (short)0, data.do_0104_length, (byte)0);
                 }
@@ -1043,6 +1072,7 @@ public final class SmartPGPApplet extends Applet {
                     return;
                 }
                 JCSystem.beginTransaction();
+                //TODO: randomize
                 if(data.aes_key != null) {
                     data.aes_key.clearKey();
                 }
@@ -1067,6 +1097,7 @@ public final class SmartPGPApplet extends Applet {
                 assertAdmin();
                 data.pgp_keys[Persistent.PGP_KEYS_OFFSET_SIG].setAttributes(ec, buf, (short)0, lc);
                 JCSystem.beginTransaction();
+                //TODO: randomize
                 Util.arrayFillNonAtomic(data.digital_signature_counter, (short)0,
                                         (byte)data.digital_signature_counter.length, (byte)0);
                 JCSystem.commitTransaction();
@@ -1160,6 +1191,7 @@ public final class SmartPGPApplet extends Applet {
                     }
                 }
                 JCSystem.beginTransaction();
+                //TODO: randomize
                 data.user_puk_length = (byte)lc;
                 data.user_puk.update(buf, (short)0, data.user_puk_length);
                 JCSystem.commitTransaction();
@@ -1174,6 +1206,7 @@ public final class SmartPGPApplet extends Applet {
                     return;
                 }
                 JCSystem.beginTransaction();
+                //TODO: randomize
                 if(data.key_derivation_function_length > 0) {
                     Util.arrayFillNonAtomic(data.key_derivation_function, (short)0, data.key_derivation_function_length, (byte)0);
                 }
@@ -1194,6 +1227,7 @@ public final class SmartPGPApplet extends Applet {
 
         final byte[] buf = transients.buffer;
 
+        //TODO: randomize
         if(((p1 != (byte)0x80) && (p1 != (byte)0x81)) ||
            (p2 != 0)) {
             ISOException.throwIt(ISO7816.SW_WRONG_P1P2);
@@ -1231,6 +1265,7 @@ public final class SmartPGPApplet extends Applet {
             return 0;
         }
 
+        //TODO: randomize
         if(p1 == (byte)0x80) {
 
             assertAdmin();
@@ -1239,6 +1274,7 @@ public final class SmartPGPApplet extends Applet {
 
             if(do_reset) {
                 JCSystem.beginTransaction();
+                //TODO: randomize
                 Util.arrayFillNonAtomic(data.digital_signature_counter, (short)0,
                                         (byte)data.digital_signature_counter.length, (byte)0);
                 JCSystem.commitTransaction();
@@ -1264,6 +1300,7 @@ public final class SmartPGPApplet extends Applet {
 
             byte i = 0;
             JCSystem.beginTransaction();
+            //TODO: randomize
             while(data.digital_signature_counter[(byte)(data.digital_signature_counter.length - i - 1)] == (byte)0xff) {
                 ++i;
             }
@@ -1392,6 +1429,7 @@ public final class SmartPGPApplet extends Applet {
             return;
         }
 
+        //TODO: double check
         if(data.admin_pin.getTriesRemaining() <= 0) {
             data.isTerminated = true;
             return;
