@@ -538,6 +538,7 @@ public final class PGPKey {
 
         final PublicKey pub = keys.getPublic();
 
+        // place 0x7f49 at the begginig of response
         off = Util.setShort(buf, off, (short)0x7f49);
 
         if(isRsa()) {
@@ -546,14 +547,19 @@ public final class PGPKey {
             final short modulus_size = Common.bitsToBytes(rsaModulusBitSize());
             final short exponent_size = Common.bitsToBytes(rsaExponentBitSize());
 
+            // Determine lenght of size of modulus
             final short mlensize = (short)((modulus_size > (short)0xff) ? 3 : 2);
 
+            // message consinst of delimeter (1), size of modulus (mlensize), modulus (modulus_size),
+            // delimeter (1), size of exponent (1), exponent (exponent_size)
             final short flen =
                 (short)(1 + mlensize + modulus_size +
                         1 + 1 + exponent_size);
 
+            // place lengt of whole message before message
             off = Common.writeLength(buf, off, flen);
 
+            // write modulus and exponent with their sizes to response buffer
             buf[off++] = (byte)0x81;
             off = Common.writeLength(buf, off, modulus_size);
             off += rsapub.getModulus(buf, off);
