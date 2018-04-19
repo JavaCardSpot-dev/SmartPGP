@@ -86,12 +86,78 @@ public class Tests {
     public void verifyAdminPin() throws Exception {
 
         String pin = "12345678";
-        byte[] data = pin.getBytes(StandardCharsets.US_ASCII);
+        byte[] pinBytes = pin.getBytes(StandardCharsets.US_ASCII);
 
-        final ResponseAPDU response = cardMngr.transmit(new CommandAPDU(0x00, 0x20, 0x00, 0x83, data));
+        final ResponseAPDU response = cardMngr.transmit(new CommandAPDU(0x00, 0x20, 0x00, 0x83, pinBytes));
 
         Assert.assertEquals(144, response.getSW1());
         Assert.assertEquals(0, response.getSW2());
+    }
+
+
+    @Test
+    public void verifUserPin() throws Exception {
+
+        // Verify user pin
+        String pin2 = "123456";
+        byte[] pinBytes2 = pin2.getBytes(StandardCharsets.US_ASCII);
+        final ResponseAPDU response = cardMngr.transmit(new CommandAPDU(0x00, 0x20, 0x00, 0x82, pinBytes2));
+
+        Assert.assertEquals(144, response.getSW1());
+        Assert.assertEquals(0, response.getSW2());
+    }
+
+    @Test
+    public void changeAdminPin() throws Exception {
+
+        // First verify that default PIN is set
+        String pin = "12345678";
+        byte[] pinBytes = pin.getBytes(StandardCharsets.US_ASCII);
+
+        final ResponseAPDU response = cardMngr.transmit(new CommandAPDU(0x00, 0x20, 0x00, 0x83, pinBytes));
+
+        Assert.assertEquals(144, response.getSW1());
+        Assert.assertEquals(0, response.getSW2());
+
+        String newPin = "87654321";
+        String oldAndNewPin = pin + newPin;
+        byte[] oldAndNewPinBytes = oldAndNewPin.getBytes(StandardCharsets.US_ASCII);
+        // Change PIN
+        cardMngr.transmit(new CommandAPDU(0x00, 0x24, 0x00, 0x83, oldAndNewPinBytes));
+
+        // Verify new PIN
+        byte[] newPinBytes = newPin.getBytes(StandardCharsets.US_ASCII);
+        final ResponseAPDU reponse2 = cardMngr.transmit(new CommandAPDU(0x00, 0x20, 0x00, 0x83, newPinBytes));
+
+        Assert.assertEquals(144, reponse2.getSW1());
+        Assert.assertEquals(0, reponse2.getSW2());
+    }
+
+
+    @Test
+    public void changeUserPin() throws Exception {
+
+        // First verify that default PIN is set
+        String pin = "123456";
+        byte[] pinBytes = pin.getBytes(StandardCharsets.US_ASCII);
+
+        final ResponseAPDU response = cardMngr.transmit(new CommandAPDU(0x00, 0x20, 0x00, 0x81, pinBytes));
+
+        Assert.assertEquals(144, response.getSW1());
+        Assert.assertEquals(0, response.getSW2());
+
+        String newPin = "654321";
+        String oldAndNewPin = pin + newPin;
+        byte[] oldAndNewPinBytes = oldAndNewPin.getBytes(StandardCharsets.US_ASCII);
+        // Change PIN
+        cardMngr.transmit(new CommandAPDU(0x00, 0x24, 0x00, 0x81, oldAndNewPinBytes));
+
+        // Verify new PIN
+        byte[] newPinBytes = newPin.getBytes(StandardCharsets.US_ASCII);
+        final ResponseAPDU reponse2 = cardMngr.transmit(new CommandAPDU(0x00, 0x20, 0x00, 0x81, newPinBytes));
+
+        Assert.assertEquals(144, reponse2.getSW1());
+        Assert.assertEquals(0, reponse2.getSW2());
     }
 
     @Test
@@ -109,9 +175,9 @@ public class Tests {
 
         // We have to verify pin first
         String pin = "12345678";
-        byte[] data = pin.getBytes(StandardCharsets.US_ASCII);
+        byte[] pinBytes = pin.getBytes(StandardCharsets.US_ASCII);
 
-        cardMngr.transmit(new CommandAPDU(0x00, 0x20, 0x00, 0x83, data));
+        cardMngr.transmit(new CommandAPDU(0x00, 0x20, 0x00, 0x83, pinBytes));
 
         byte[] key = Util.hexStringToByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
         final ResponseAPDU response = cardMngr.transmit(new CommandAPDU(0x00, 0xDA, 0x00, 0xD5, key));
@@ -125,8 +191,8 @@ public class Tests {
 
         // We have to verify admin pin first
         String pin = "12345678";
-        byte[] data = pin.getBytes(StandardCharsets.US_ASCII);
-        cardMngr.transmit(new CommandAPDU(0x00, 0x20, 0x00, 0x83, data));
+        byte[] pinBytes = pin.getBytes(StandardCharsets.US_ASCII);
+        cardMngr.transmit(new CommandAPDU(0x00, 0x20, 0x00, 0x83, pinBytes));
 
         // Then put AES key on card
         byte[] key = Util.hexStringToByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
@@ -147,8 +213,8 @@ public class Tests {
 
         // We have to verify admin pin first
         String pin = "12345678";
-        byte[] data = pin.getBytes(StandardCharsets.US_ASCII);
-        cardMngr.transmit(new CommandAPDU(0x00, 0x20, 0x00, 0x83, data));
+        byte[] pinBytes = pin.getBytes(StandardCharsets.US_ASCII);
+        cardMngr.transmit(new CommandAPDU(0x00, 0x20, 0x00, 0x83, pinBytes));
 
         // Then put AES key on card
         byte[] key = Util.hexStringToByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
@@ -156,8 +222,8 @@ public class Tests {
 
         // Verify user pin
         String pin2 = "123456";
-        byte[] data2 = pin2.getBytes(StandardCharsets.US_ASCII);
-        cardMngr.transmit(new CommandAPDU(0x00, 0x20, 0x00, 0x82, data2));
+        byte[] pinBytes2 = pin2.getBytes(StandardCharsets.US_ASCII);
+        cardMngr.transmit(new CommandAPDU(0x00, 0x20, 0x00, 0x82, pinBytes2));
 
         // Encrypt
         byte[] plaintext = Util.hexStringToByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
@@ -175,8 +241,8 @@ public class Tests {
 
         // We have to verify admin pin first
         String pin = "12345678";
-        byte[] data = pin.getBytes(StandardCharsets.US_ASCII);
-        cardMngr.transmit(new CommandAPDU(0x00, 0x20, 0x00, 0x83, data));
+        byte[] pinBytes = pin.getBytes(StandardCharsets.US_ASCII);
+        cardMngr.transmit(new CommandAPDU(0x00, 0x20, 0x00, 0x83, pinBytes));
 
         // Then put AES key on card
         byte[] key = Util.hexStringToByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
@@ -184,8 +250,8 @@ public class Tests {
 
         // Verify user pin
         String pin2 = "123456";
-        byte[] data2 = pin2.getBytes(StandardCharsets.US_ASCII);
-        cardMngr.transmit(new CommandAPDU(0x00, 0x20, 0x00, 0x82, data2));
+        byte[] pinBytes2 = pin2.getBytes(StandardCharsets.US_ASCII);
+        cardMngr.transmit(new CommandAPDU(0x00, 0x20, 0x00, 0x82, pinBytes2));
 
         // Decrypt
         byte[] cipherText = Util.hexStringToByteArray("0278498CDE07D82A92B6A07EFA970A854D");
@@ -200,12 +266,87 @@ public class Tests {
 
 
     @Test
+    public void setSigAttributes() throws Exception {
+
+        // We have to verify admin pin first
+        String pin = "12345678";
+        byte[] pinBytes = pin.getBytes(StandardCharsets.US_ASCII);
+        cardMngr.transmit(new CommandAPDU(0x00, 0x20, 0x00, 0x83, pinBytes));
+
+        // Prepara data with attributes
+        byte[] keyAttributes = new byte[] {
+                0x01,       // RSA
+                0x08, 0x00, // 2048 bits modulus
+                0x00, 0x11, // 65537 - 17 bits public exponent
+                0x03 } ;    // crt form with modulus
+
+        cardMngr.transmit(new CommandAPDU(0x00, 0xDA, 0x00, 0xC1, keyAttributes));
+
+        // first byte is prefix, then lenght and then sent attributes
+        byte[] expectedResponse = new byte[] { (byte) 0xC1, 0x06, 0x01, 0x08, 0x00, 0x00, 0x11, 0x03};
+        byte[] responseBytes = cardMngr.transmit(new CommandAPDU(0x00, 0xCA, 0x00, 0xC1, keyAttributes)).getData();
+
+        Assert.assertArrayEquals(expectedResponse, responseBytes);
+    }
+
+
+    @Test
+    public void setDecAttributes() throws Exception {
+
+        // We have to verify admin pin first
+        String pin = "12345678";
+        byte[] pinBytes = pin.getBytes(StandardCharsets.US_ASCII);
+        cardMngr.transmit(new CommandAPDU(0x00, 0x20, 0x00, 0x83, pinBytes));
+
+        // Prepara data with attributes
+        byte[] keyAttributes = new byte[] {
+                0x01,       // RSA
+                0x08, 0x00, // 2048 bits modulus
+                0x00, 0x11, // 65537 - 17 bits public exponent
+                0x03 } ;    // crt form with modulus
+
+        cardMngr.transmit(new CommandAPDU(0x00, 0xDA, 0x00, 0xC2, keyAttributes));
+
+        // first byte is prefix, then lenght and then sent attributes
+        byte[] expectedResponse = new byte[] { (byte) 0xC2, 0x06, 0x01, 0x08, 0x00, 0x00, 0x11, 0x03};
+        byte[] responseBytes = cardMngr.transmit(new CommandAPDU(0x00, 0xCA, 0x00, 0xC2, keyAttributes)).getData();
+
+        Assert.assertArrayEquals(expectedResponse, responseBytes);
+    }
+
+
+    @Test
+    public void setAuthAttributes() throws Exception {
+
+        // We have to verify admin pin first
+        String pin = "12345678";
+        byte[] pinBytes = pin.getBytes(StandardCharsets.US_ASCII);
+        cardMngr.transmit(new CommandAPDU(0x00, 0x20, 0x00, 0x83, pinBytes));
+
+        // Prepara data with attributes
+        byte[] keyAttributes = new byte[] {
+                0x01,       // RSA
+                0x08, 0x00, // 2048 bits modulus
+                0x00, 0x11, // 65537 - 17 bits public exponent
+                0x03 } ;    // crt form with modulus
+
+        cardMngr.transmit(new CommandAPDU(0x00, 0xDA, 0x00, 0xC3, keyAttributes));
+
+        // first byte is prefix, then lenght and then sent attributes
+        byte[] expectedResponse = new byte[] { (byte) 0xC3, 0x06, 0x01, 0x08, 0x00, 0x00, 0x11, 0x03};
+        byte[] responseBytes = cardMngr.transmit(new CommandAPDU(0x00, 0xCA, 0x00, 0xC3, keyAttributes)).getData();
+
+        Assert.assertArrayEquals(expectedResponse, responseBytes);
+    }
+
+
+    @Test
     public void sign() throws Exception {
 
         // We have to verify admin pin first
         String pin = "12345678";
-        byte[] data = pin.getBytes(StandardCharsets.US_ASCII);
-        cardMngr.transmit(new CommandAPDU(0x00, 0x20, 0x00, 0x83, data));
+        byte[] pinBytes = pin.getBytes(StandardCharsets.US_ASCII);
+        cardMngr.transmit(new CommandAPDU(0x00, 0x20, 0x00, 0x83, pinBytes));
 
         // Then generate RSA key on card and recieve public part - we first sent key attributes
         byte[] keyAttributes = new byte[] {
@@ -240,8 +381,8 @@ public class Tests {
 
         // Verify user pin
         String pin2 = "123456";
-        byte[] data2 = pin2.getBytes(StandardCharsets.US_ASCII);
-        cardMngr.transmit(new CommandAPDU(0x00, 0x20, 0x00, 0x81, data2));
+        byte[] pinBytes2 = pin2.getBytes(StandardCharsets.US_ASCII);
+        cardMngr.transmit(new CommandAPDU(0x00, 0x20, 0x00, 0x81, pinBytes2));
 
         // Sign
         final byte[] DSI_SHA256_HEADER = {
