@@ -5,24 +5,16 @@ import cardTools.RunConfig;
 import cardTools.Util;
 import fr.anssi.smartpgp.SmartPGPApplet;
 
-import javax.crypto.SecretKey;
-import javax.crypto.spec.SecretKeySpec;
 import javax.smartcardio.CommandAPDU;
 import javax.smartcardio.ResponseAPDU;
 
 import javacard.security.KeyBuilder;
-import javacard.security.KeyPair;
-import javacard.security.PrivateKey;
 import javacard.security.RSAPublicKey;
 import javacardx.crypto.Cipher;
 import org.junit.*;
 
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
-import java.security.KeyFactory;
-import java.security.PublicKey;
-import java.security.Signature;
-import java.security.spec.RSAPublicKeySpec;
 
 /**
  * Test class.
@@ -204,5 +196,78 @@ public class Tests {
         Assert.assertArrayEquals(expectedPlaintext, response.getData());
         Assert.assertEquals(144, response.getSW1());
         Assert.assertEquals(0, response.getSW2());
+    }
+
+
+    @Test
+    public void sign() throws Exception {
+
+        // We have to verify admin pin first
+        String pin = "12345678";
+        byte[] data = pin.getBytes(StandardCharsets.US_ASCII);
+        cardMngr.transmit(new CommandAPDU(0x00, 0x20, 0x00, 0x83, data));
+
+        // Then generate RSA key on card and recieve public part - we first sent key attributes
+        byte[] keyAttributes = new byte[] {
+                0x01,       // RSA
+                0x08, 0x00, // 2048 bits modulus
+                0x00, 0x11, // 65537 - 17 bits public exponent
+                0x03 } ;    // crt form with modulus
+        cardMngr.transmit(new CommandAPDU(0x00, 0xDA, 0x00, 0xC1, keyAttributes));
+
+        byte[] keyToGenerate = new byte[] { (byte) 0xB6, 0x00}; // signature key
+        final byte[] response = cardMngr.transmit(new CommandAPDU(0x00, 0x47, 0x80, 0x00, keyToGenerate)).getData();
+        final byte[] responseCont = cardMngr.transmit(new CommandAPDU(0x00, 0xC0, 0x00, 0x00)).getData();
+
+        byte[] wholeResponse = new byte[response.length + responseCont.length];
+        System.arraycopy(response, 0, wholeResponse, 0, response.length);
+        System.arraycopy(responseCont, 0, wholeResponse, response.length, responseCont.length);
+
+        short lenghtOfModulus = readLength(wholeResponse, (short) 6, (short) 3);
+        byte[] byteModulus = new byte[lenghtOfModulus];
+        System.arraycopy(wholeResponse, 9, byteModulus, 0, lenghtOfModulus);
+        BigInteger modulus = new BigInteger(byteModulus);
+
+        short lenghtOfExponent = readLength(wholeResponse, (short) (9 + lenghtOfModulus + 1), (short) 1);
+        byte[] byteExponent = new byte[lenghtOfExponent];
+        System.arraycopy(wholeResponse, 11 + lenghtOfModulus, byteExponent, 0, lenghtOfExponent);
+        BigInteger exponent = new BigInteger(byteExponent);
+
+        final RSAPublicKey pub = (RSAPublicKey)KeyBuilder.buildKey(KeyBuilder.TYPE_RSA_PUBLIC, (short) (lenghtOfModulus * 8), true);
+
+        pub.setModulus(byteModulus, (short) 0, lenghtOfModulus);
+        pub.setExponent(byteExponent, (short) 0, lenghtOfExponent);
+
+        // Verify user pin
+        String pin2 = "123456";
+        byte[] data2 = pin2.getBytes(StandardCharsets.US_ASCII);
+        cardMngr.transmit(new CommandAPDU(0x00, 0x20, 0x00, 0x81, data2));
+
+        // Sign
+        final byte[] DSI_SHA256_HEADER = {
+                (byte)0x30, (byte)0x31,
+                (byte)0x30, (byte)0x0D,
+                (byte)0x06, (byte)0x09, (byte)0x60, (byte)0x86, (byte)0x48, (byte)0x01, (byte)0x65, (byte)0x03, (byte)0x04, (byte)0x02, (byte)0x01,
+                (byte)0x05, (byte)0x00,
+                (byte)0x04, (byte)0x20
+        };
+
+        byte[] plaintext = Util.hexStringToByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+
+        byte[] apduDATA = new byte[DSI_SHA256_HEADER.length + plaintext.length];
+        System.arraycopy(DSI_SHA256_HEADER, 0, apduDATA, 0, DSI_SHA256_HEADER.length);
+        System.arraycopy(plaintext, 0, apduDATA, DSI_SHA256_HEADER.length, plaintext.length);
+
+        final byte[] signature = cardMngr.transmit(new CommandAPDU(0x00, 0x2A, 0x9E, 0x9A, apduDATA)).getData();
+
+        byte encryptedSignature[] = new byte[256];
+
+        Cipher cipher_rsa_pkcs1 = Cipher.getInstance(Cipher.ALG_RSA_PKCS1, false);
+
+        cipher_rsa_pkcs1.init(pub, Cipher.MODE_ENCRYPT);
+
+        //cipher_rsa_pkcs1.doFinal(signature, (short)0, (short) signature.length, encryptedSignature, (short)0);
+
+        //Assert.assertArrayEquals(plaintext, encryptedSignature);
     }
 }
