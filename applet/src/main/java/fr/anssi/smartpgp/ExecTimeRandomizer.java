@@ -21,6 +21,6 @@ public class ExecTimeRandomizer {
         byte[] count = JCSystem.makeTransientByteArray((short) 1,
                 JCSystem.CLEAR_ON_DESELECT);
         random_data.generateData(count,(short) 0,(short) 1);
-        for (short i = (short) 0; i < (short) count[1]; ++i){}
+        for (short i = (short) 0; i < (short) count[0]; ++i){}
     }
 }

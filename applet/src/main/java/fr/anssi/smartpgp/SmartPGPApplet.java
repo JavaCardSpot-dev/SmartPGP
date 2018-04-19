@@ -38,7 +38,7 @@ public final class SmartPGPApplet extends Applet {
 
     public SmartPGPApplet() {
         cipher_aes_cbc_nopad = Cipher.getInstance(Cipher.ALG_AES_BLOCK_128_CBC_NOPAD, false);
-        random_data = RandomData.getInstance(RandomData.ALG_SECURE_RANDOM); // RandomData.ALG_TRNG
+        random_data = RandomData.getInstance(RandomData.ALG_SECURE_RANDOM); // use RandomData.ALG_TRNG since version 3.0.5
 
         ec = new ECCurves();
 
