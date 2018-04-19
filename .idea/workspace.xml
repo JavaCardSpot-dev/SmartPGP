@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="83bd84b5-903b-4f71-9e5f-d6d0c1d5189c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules/applet/module_applet.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/applet/module_applet_main.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/applet/module_applet_test.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/jcard.iml" afterPath="$PROJECT_DIR$/.idea/modules/jcard.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/module_jcard.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/simpleapdu/Tests.java" afterPath="$PROJECT_DIR$/src/simpleapdu/Tests.java" />
+      <change beforePath="$PROJECT_DIR$/src/cardTools/CardManager.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/cardTools/RunConfig.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/cardTools/SimulatedCard.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/cardTools/SimulatedCardChannelLocal.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/cardTools/Util.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/simpleapdu/Tests.java" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -31,17 +32,149 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <projects_view />
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="jcard" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="jcard" type="f1a62948:ProjectNode" />
+                <item name="jcard" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="jcard" type="f1a62948:ProjectNode" />
+                <item name="jcard" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="jcard" type="f1a62948:ProjectNode" />
+                <item name="jcard" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="jcard" type="f1a62948:ProjectNode" />
+                <item name=":applet" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="jcard" type="f1a62948:ProjectNode" />
+                <item name=":applet" type="2d1252cf:ModuleNode" />
+                <item name="Source Sets" type="e897c970:GradleViewContributor$SourceSetsNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
       </state>
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Tests.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/simpleapdu/Tests.java">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="SmartPGPApplet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/applet/src/main/java/fr/anssi/smartpgp/SmartPGPApplet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="203" column="0" lean-forward="false" selection-start-line="203" selection-start-column="0" selection-end-line="203" selection-end-column="0" />
+            <state relative-caret-position="378">
+              <caret line="42" column="28" lean-forward="false" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/applet/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="954">
+              <caret line="53" column="29" lean-forward="false" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.gradle" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/settings.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54">
+              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Util.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test_src/cardTools/Util.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Tests.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test_src/simpleapdu/Tests.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1638">
+              <caret line="48" column="9" lean-forward="false" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RunConfig.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test_src/cardTools/RunConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="d.iml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/d.iml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="10" column="9" lean-forward="false" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.iml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/applet/src/main/main.iml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="18" column="9" lean-forward="false" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -448,7 +581,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="6096658805000" />
+        <entry key="$PROJECT_DIR$" value="6088165402000" />
         <entry key="$PROJECT_DIR$/applet/build.gradle" value="3162825728" />
         <entry key="$PROJECT_DIR$/build.gradle" value="806369882" />
         <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="566444372" />
@@ -664,6 +797,7 @@
         <option value="$PROJECT_DIR$/applet/src/main/java/fr/anssi/smartpgp/SmartPGPApplet.java" />
         <option value="$PROJECT_DIR$/applet/src/main/java/fr/anssi/smartpgp/PGPKey.java" />
         <option value="$PROJECT_DIR$/src/simpleapdu/Tests.java" />
+        <option value="$PROJECT_DIR$/applet/build.gradle" />
       </list>
     </option>
   </component>
@@ -695,7 +829,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -706,31 +840,32 @@
             <path>
               <item name="jcard" type="b2602c69:ProjectViewProjectNode" />
               <item name="SmartPGP" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="applet" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
               <item name="jcard" type="b2602c69:ProjectViewProjectNode" />
               <item name="SmartPGP" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test_src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jcard" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SmartPGP" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="test_src" type="462c0819:PsiDirectoryNode" />
               <item name="cardTools" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jcard" type="b2602c69:ProjectViewProjectNode" />
               <item name="SmartPGP" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test_src" type="462c0819:PsiDirectoryNode" />
               <item name="simpleapdu" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jcard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="AndroidView" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -781,25 +916,6 @@
       <module name="jcard" />
       <envs />
     </configuration>
-    <configuration name="SimpleAPDU" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="simpleapdu.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="simpleapdu.SimpleAPDU" />
-      <option name="VM_PARAMETERS" value="-enableassertions -noverify" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="jcard" />
-      <envs />
-    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" />
@@ -813,6 +929,32 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
       <envs />
+    </configuration>
+    <configuration name="SmartPGP [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+    </configuration>
+    <configuration name="build" type="GroovyScriptRunConfiguration" factoryName="Groovy" temporary="true">
+      <module name="jcard" />
+      <setting name="path" value="file://$PROJECT_DIR$/build.gradle" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="file://$PROJECT_DIR$" />
+      <setting name="debug" value="false" />
     </configuration>
     <configuration name="Tests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
@@ -883,31 +1025,6 @@
       <option name="PACKAGE_NAME" value="simpleapdu" />
       <option name="MAIN_CLASS_NAME" value="simpleapdu.Tests" />
       <option name="METHOD_NAME" value="putDataNotPermittedWihoutAdminPIN" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea -enableassertions -noverify" />
-      <option name="PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://%MODULE_WORKING_DIR%" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="Tests.securityOperationNotPermittedWihoutUserPIN" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="simpleapdu.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="jcard" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="simpleapdu" />
-      <option name="MAIN_CLASS_NAME" value="simpleapdu.Tests" />
-      <option name="METHOD_NAME" value="securityOperationNotPermittedWihoutUserPIN" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea -enableassertions -noverify" />
       <option name="PARAMETERS" value="" />
@@ -1021,15 +1138,15 @@
       <item index="0" class="java.lang.String" itemvalue="Application.SimpleAPDU" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.Tests" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.Tests.decryptAES" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.Tests.securityOperationNotPermittedWihoutUserPIN" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.Tests.sign" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.Tests.sign" />
+      <item index="4" class="java.lang.String" itemvalue="Gradle.SmartPGP [build]" />
     </list>
     <recent_temporary>
       <list size="4">
         <item index="0" class="java.lang.String" itemvalue="JUnit.Tests" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.Tests.sign" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.Tests.decryptAES" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.Tests.securityOperationNotPermittedWihoutUserPIN" />
+        <item index="1" class="java.lang.String" itemvalue="Gradle.SmartPGP [build]" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.Tests.sign" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.Tests.decryptAES" />
       </list>
     </recent_temporary>
   </component>
@@ -1061,33 +1178,34 @@
       <workItem from="1524142324634" duration="11426000" />
       <workItem from="1524158062358" duration="4128000" />
       <workItem from="1524164975321" duration="87000" />
+      <workItem from="1524167334922" duration="224000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Tests - 2018.04.19 at 21h 10m 34s.xml">
+    <history-entry file="Tests - 2018.04.19 at 21h 13m 19s.xml">
       <configuration name="Tests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Tests - 2018.04.19 at 21h 10m 48s.xml">
+    <history-entry file="Tests - 2018.04.19 at 21h 14m 23s.xml">
       <configuration name="Tests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Tests_sign - 2018.04.19 at 20h 50m 55s.xml">
-      <configuration name="Tests.sign" configurationId="JUnit" />
+    <history-entry file="Tests - 2018.04.19 at 21h 15m 42s.xml">
+      <configuration name="Tests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Tests_sign - 2018.04.19 at 20h 52m 02s.xml">
-      <configuration name="Tests.sign" configurationId="JUnit" />
+    <history-entry file="Tests - 2018.04.19 at 21h 33m 03s.xml">
+      <configuration name="Tests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Tests_sign - 2018.04.19 at 20h 52m 29s.xml">
-      <configuration name="Tests.sign" configurationId="JUnit" />
+    <history-entry file="Tests - 2018.04.19 at 21h 43m 18s.xml">
+      <configuration name="Tests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Tests_sign - 2018.04.19 at 20h 53m 47s.xml">
-      <configuration name="Tests.sign" configurationId="JUnit" />
+    <history-entry file="Tests - 2018.04.19 at 21h 43m 31s.xml">
+      <configuration name="Tests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Tests_sign - 2018.04.19 at 20h 55m 44s.xml">
-      <configuration name="Tests.sign" configurationId="JUnit" />
+    <history-entry file="Tests - 2018.04.19 at 21h 44m 28s.xml">
+      <configuration name="Tests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Tests_sign - 2018.04.19 at 20h 55m 49s.xml">
-      <configuration name="Tests.sign" configurationId="JUnit" />
+    <history-entry file="Tests - 2018.04.19 at 21h 52m 31s.xml">
+      <configuration name="Tests" configurationId="JUnit" />
     </history-entry>
     <history-entry file="Tests_sign - 2018.04.19 at 20h 57m 00s.xml">
       <configuration name="Tests.sign" configurationId="JUnit" />
@@ -1097,22 +1215,21 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63842000" />
+    <option name="totallyTimeSpent" value="66214000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <frame x="569" y="234" width="1857" height="1092" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42638037" sideWeight="0.4851752" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27402863" sideWeight="0.52345014" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44376278" sideWeight="0.8021563" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44376278" sideWeight="0.8021563" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1123,13 +1240,14 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23108384" sideWeight="0.47654986" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23108384" sideWeight="0.47654986" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924336" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42638037" sideWeight="0.4851752" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31288344" sideWeight="0.49595687" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1196,57 +1314,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/simpleapdu/Tests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="47" column="29" lean-forward="false" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gradlew.bat">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cardTools/SimulatedCardChannelLocal.java" />
-    <entry file="file://$PROJECT_DIR$/gradlew">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/INTEGRATION.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/simpleapdu/Tests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/INTEGRATION.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gradlew">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1272,7 +1339,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="27" column="19" lean-forward="false" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1287,7 +1353,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="27" column="19" lean-forward="false" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1295,7 +1360,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="28" column="19" lean-forward="false" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1317,7 +1381,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2556">
           <caret line="167" column="23" lean-forward="false" selection-start-line="167" selection-start-column="23" selection-end-line="167" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1343,16 +1406,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/applet/src/main/main.iml" />
+    <entry file="file://$PROJECT_DIR$/applet/src/main/main.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="9" lean-forward="false" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/applet/src/main/java/fr/anssi/smartpgp/Transients.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="159">
           <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
-          <folding>
-            <element signature="e#3703#3704#0" expanded="false" />
-            <element signature="e#4508#4509#0" expanded="false" />
-            <element signature="e#4564#4565#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1360,7 +1425,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
           <caret line="38" column="49" lean-forward="false" selection-start-line="38" selection-start-column="49" selection-end-line="38" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1384,7 +1448,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="156" column="56" lean-forward="true" selection-start-line="156" selection-start-column="56" selection-end-line="156" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1401,178 +1464,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1710">
           <caret line="108" column="11" lean-forward="false" selection-start-line="108" selection-start-column="11" selection-end-line="108" selection-end-column="11" />
-          <folding>
-            <marker date="1521029755000" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1521029755000" expanded="false" signature="133:505" ph="..." />
-            <marker date="1521029755000" expanded="true" signature="629:647" ph="/**...*/" />
-            <marker date="1521029755000" expanded="true" signature="694:712" ph="/**...*/" />
-            <marker date="1521029755000" expanded="true" signature="760:778" ph="/**...*/" />
-            <marker date="1521029755000" expanded="true" signature="829:847" ph="/**...*/" />
-            <marker date="1521029755000" expanded="true" signature="3075:3573" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="3610:4114" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="4161:4727" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="4774:5339" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="5386:8592" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="8642:9894" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="9954:10452" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="10528:11253" ph="{...}" />
-            <marker date="1521029755000" expanded="false" signature="11289:11300" ph=" { " />
-            <marker date="1521029755000" expanded="false" signature="11323:11329" ph=" }" />
-            <marker date="1521029755000" expanded="false" signature="11375:11386" ph=" { " />
-            <marker date="1521029755000" expanded="false" signature="11426:11432" ph=" }" />
-            <marker date="1521029755000" expanded="true" signature="11494:11943" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="12000:12283" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="12351:12559" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="12635:13745" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="13821:14513" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="14557:16488" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="16541:16741" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="16795:17579" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="17621:17930" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="17995:19660" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="19756:20825" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="20888:21849" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="21888:22056" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="22104:22295" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="22327:22467" ph="{...}" />
-            <marker date="1521029755000" expanded="false" signature="22509:22520" ph=" { " />
-            <marker date="1521029755000" expanded="false" signature="22595:22601" ph=" }" />
-            <marker date="1521029755000" expanded="true" signature="22651:22917" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="22953:23366" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="23418:23502" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="23547:24203" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="24235:24918" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="24972:26355" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="26410:27630" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="27689:28676" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="28735:29582" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="29632:30297" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="30357:30988" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="31038:32153" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="32231:33054" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="33091:34826" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="34923:35958" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="36042:36719" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="36803:38530" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="38608:39467" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="39509:40261" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="40305:40615" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="40659:40989" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="41023:41452" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="41531:41774" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="41890:42579" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="42672:43387" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="43430:43786" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="43829:45020" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="45068:45216" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="45270:45573" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="45635:45807" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="45875:46327" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="46378:46532" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="46589:46857" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="46921:46992" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="47059:47130" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="47208:47627" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="47665:50426" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="50471:50870" ph="{...}" />
-            <marker date="1521029755000" expanded="false" signature="50912:50923" ph=" { " />
-            <marker date="1521029755000" expanded="false" signature="50970:50976" ph=" }" />
-            <marker date="1521029755000" expanded="true" signature="51045:51785" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="51855:52134" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="52203:52604" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="52661:52743" ph="{...}" />
-            <marker date="1521029755000" expanded="false" signature="52772:52783" ph=" { " />
-            <marker date="1521029755000" expanded="false" signature="52830:52836" ph=" }" />
-            <marker date="1521029755000" expanded="false" signature="52868:52879" ph=" { " />
-            <marker date="1521029755000" expanded="false" signature="52925:52931" ph=" }" />
-            <marker date="1521029755000" expanded="false" signature="52956:52967" ph=" { " />
-            <marker date="1521029755000" expanded="false" signature="52986:52992" ph=" }" />
-            <marker date="1521029755000" expanded="true" signature="53037:53295" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="53360:55625" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="55740:56090" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="56191:56519" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="56656:57121" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="57182:57305" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="57424:57547" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="57652:57761" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="57830:62513" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="62595:63132" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="63208:63549" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="63613:63921" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="63999:64118" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="64214:64818" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="64908:65296" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="65362:65930" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="65990:66509" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="66549:67004" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="67056:67781" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="67825:68088" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="68147:68974" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="69019:69282" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="69332:70878" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="70916:71191" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="71236:71517" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="71561:71842" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="71887:72168" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="72198:72414" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="72462:72744" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="72783:72978" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="73019:73489" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="73532:74017" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="74059:74529" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="74564:75092" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="75121:75884" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="75912:76569" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="76616:76955" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="76999:77370" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="77420:78001" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="78045:79493" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="79534:80337" ph="{...}" />
-            <marker date="1521029755000" expanded="false" signature="80381:80392" ph=" { " />
-            <marker date="1521029755000" expanded="false" signature="80438:80444" ph=" }" />
-            <marker date="1521029755000" expanded="false" signature="80488:80499" ph=" { " />
-            <marker date="1521029755000" expanded="false" signature="80545:80551" ph=" }" />
-            <marker date="1521029755000" expanded="true" signature="80579:80799" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="80838:81469" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="81514:82971" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="83063:83845" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="83921:84551" ph="{...}" />
-            <marker date="1521029755000" expanded="false" signature="84581:84592" ph=" { " />
-            <marker date="1521029755000" expanded="false" signature="84617:84623" ph=" }" />
-            <marker date="1521029755000" expanded="true" signature="84657:85125" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="85153:85246" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="85276:85462" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="85494:86734" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="86768:88327" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="88387:88587" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="88654:88873" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="88935:89540" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="89593:90733" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="90785:91377" ph="{...}" />
-            <marker date="1521029755000" expanded="false" signature="91406:91417" ph=" { " />
-            <marker date="1521029755000" expanded="false" signature="91453:91459" ph=" }" />
-            <marker date="1521029755000" expanded="false" signature="91486:91497" ph=" { " />
-            <marker date="1521029755000" expanded="false" signature="91528:91534" ph=" }" />
-            <marker date="1521029755000" expanded="false" signature="91561:91572" ph=" { " />
-            <marker date="1521029755000" expanded="false" signature="91604:91610" ph=" }" />
-            <marker date="1521029755000" expanded="true" signature="91645:91965" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="92004:92408" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="92505:93833" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="93908:94235" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="94276:94857" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="94892:95100" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="95133:95339" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="95376:95675" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="95710:96003" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="96016:99242" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="99282:100132" ph="{...}" />
-            <marker date="1521029755000" expanded="true" signature="99453:99464" ph="{}" />
-            <marker date="1521029755000" expanded="false" signature="99520:99535" ph=" { " />
-            <marker date="1521029755000" expanded="false" signature="99583:99593" ph=" }" />
-            <marker date="1521029755000" expanded="false" signature="99650:99665" ph=" { " />
-            <marker date="1521029755000" expanded="false" signature="99713:99723" ph=" }" />
-            <marker date="1521029755000" expanded="true" signature="99740:100126" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1594,10 +1485,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding>
-            <marker date="1521029755000" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1521029755000" expanded="false" signature="148:201" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1605,7 +1492,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="219">
           <caret line="224" column="133" lean-forward="true" selection-start-line="224" selection-start-column="133" selection-end-line="224" selection-end-column="133" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1615,7 +1501,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="610" column="33" lean-forward="true" selection-start-line="610" selection-start-column="33" selection-end-line="610" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1623,7 +1508,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="27" column="19" lean-forward="false" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1658,8 +1542,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/applet/src/main/java/fr/anssi/smartpgp/SmartPGPApplet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="1638" column="0" lean-forward="false" selection-start-line="1638" selection-start-column="0" selection-end-line="1638" selection-end-column="0" />
+        <state relative-caret-position="378">
+          <caret line="42" column="28" lean-forward="false" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
           <folding />
         </state>
       </provider>
@@ -1668,7 +1552,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
           <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1676,7 +1559,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="187" column="0" lean-forward="false" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1685,18 +1567,69 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/simpleapdu/Tests.java">
+    <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="203" column="0" lean-forward="false" selection-start-line="203" selection-start-column="0" selection-end-line="203" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/applet/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="954">
+          <caret line="53" column="29" lean-forward="false" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/simpleapdu/Tests.java" />
+    <entry file="file://$PROJECT_DIR$/settings.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_src/cardTools/Util.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/applet/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="39" lean-forward="false" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_src/cardTools/RunConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_src/simpleapdu/Tests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1638">
+          <caret line="48" column="9" lean-forward="false" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="gradleExecuteTaskHistory">
+    <option value="" />
   </component>
   <component name="masterDetails">
     <states>
