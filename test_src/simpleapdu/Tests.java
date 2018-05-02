@@ -440,6 +440,14 @@ public class Tests {
         System.out.println("---------- ACTIVATE FILE ----------");
         cardMngr.transmit(new CommandAPDU(0x00, 0x44, 0x00, 0x01));
 
+        // RESET RETRY COUNTER
+        System.out.println("---------- RESET RETRY COUNTER SETUP----------");
+        String userpin = "9876543210";
+        byte[] userpinBytes = userpin.getBytes(StandardCharsets.US_ASCII);
+        cardMngr.transmit(new CommandAPDU(0x00, 0x20, 0x00, 0x83, pinBytes));
+        System.out.println("---------- ACTUAL RESET RETRY COUNTER SETUP----------");
+        cardMngr.transmit(new CommandAPDU(0x00, 0x2C, 0x02, 0x81, userpinBytes));
+
 
         Assert.assertTrue(1==1);
     }
