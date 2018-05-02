@@ -411,4 +411,51 @@ public class Tests {
 
         //Assert.assertArrayEquals(plaintext, encryptedSignature);
     }
+
+    @Test
+    public void measurements() throws Exception {
+
+        // verify admin pin
+        String pin = "12345678";
+        byte[] pinBytes = pin.getBytes(StandardCharsets.US_ASCII);
+        cardMngr.transmit(new CommandAPDU(0x00, 0x20, 0x00, 0x83, pinBytes));
+
+        // GET DATA - TAG_KEY_GENERATION_DATES
+        System.out.println("---------- GET DATA ----------");
+        cardMngr.transmit(new CommandAPDU(0x00, 0xCA, 0x00, 0xCD));
+
+        // GET NEXT DATA - TAG_CARDHOLDER_CERTIFICATE
+        System.out.println("---------- GET NEXT DATA ----------");
+        cardMngr.transmit(new CommandAPDU(0x00, 0xCC, 0x7F, 0x21));
+
+        // GET CHALLENGE - up to 32 bytes
+        System.out.println("---------- GET CHALLENGE ----------");
+        cardMngr.transmit(new CommandAPDU(0x00, 0x84, 0x00, 0x00, 0x20));
+
+        // TERMINATE DF
+        System.out.println("---------- TERMINATE DF ----------");
+        cardMngr.transmit(new CommandAPDU(0x00, 0xE6, 0x00, 0x00));
+
+        // ACTIVATE FILE
+        System.out.println("---------- ACTIVATE FILE ----------");
+        cardMngr.transmit(new CommandAPDU(0x00, 0x44, 0x00, 0x01));
+
+
+
+
+//        // Prepara data with attributes
+//        byte[] keyAttributes = new byte[] {
+//                0x01,       // RSA
+//                0x08, 0x00, // 2048 bits modulus
+//                0x00, 0x11, // 65537 - 17 bits public exponent
+//                0x03 } ;    // crt form with modulus
+
+        //cardMngr.transmit(new CommandAPDU(0x00, 0xDA, 0x00, 0xC3, keyAttributes));
+
+        // first byte is prefix, then lenght and then sent attributes
+        byte[] expectedResponse = new byte[] { (byte) 0xC3, 0x06, 0x01, 0x08, 0x00, 0x00, 0x11, 0x03};
+        //byte[] responseBytes = cardMngr.transmit(new CommandAPDU(0x00, 0xCA, 0x00, 0xC3, keyAttributes)).getData();
+
+        Assert.assertFalse(1==5);
+    }
 }
