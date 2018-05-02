@@ -441,21 +441,6 @@ public class Tests {
         cardMngr.transmit(new CommandAPDU(0x00, 0x44, 0x00, 0x01));
 
 
-
-
-//        // Prepara data with attributes
-//        byte[] keyAttributes = new byte[] {
-//                0x01,       // RSA
-//                0x08, 0x00, // 2048 bits modulus
-//                0x00, 0x11, // 65537 - 17 bits public exponent
-//                0x03 } ;    // crt form with modulus
-
-        //cardMngr.transmit(new CommandAPDU(0x00, 0xDA, 0x00, 0xC3, keyAttributes));
-
-        // first byte is prefix, then lenght and then sent attributes
-        byte[] expectedResponse = new byte[] { (byte) 0xC3, 0x06, 0x01, 0x08, 0x00, 0x00, 0x11, 0x03};
-        //byte[] responseBytes = cardMngr.transmit(new CommandAPDU(0x00, 0xCA, 0x00, 0xC3, keyAttributes)).getData();
-
-        Assert.assertFalse(1==5);
+        Assert.assertTrue(1==1);
     }
 }
